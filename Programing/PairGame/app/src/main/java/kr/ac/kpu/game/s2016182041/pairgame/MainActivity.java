@@ -20,13 +20,15 @@ public class MainActivity extends AppCompatActivity {
             R.id.card_10, R.id.card_11, R.id.card_12, R.id.card_13,
             R.id.card_20, R.id.card_21, R.id.card_22, R.id.card_23,
             R.id.card_30, R.id.card_31, R.id.card_32, R.id.card_33,
+            R.id.card_40, R.id.card_41, R.id.card_42, R.id.card_43,
     };
 
     private int[] cards={
-            R.mipmap.card_2c,R.mipmap.card_2c,R.mipmap.card_3d,R.mipmap.card_3d,
-            R.mipmap.card_4h,R.mipmap.card_4h,R.mipmap.card_5s,R.mipmap.card_5s,
-            R.mipmap.card_as,R.mipmap.card_as,R.mipmap.card_jc,R.mipmap.card_jc,
-            R.mipmap.card_qh,R.mipmap.card_qh,R.mipmap.card_kd,R.mipmap.card_kd,
+            R.mipmap.card_1,R.mipmap.card_1,R.mipmap.card_2,R.mipmap.card_2,
+            R.mipmap.card_3,R.mipmap.card_3,R.mipmap.card_4,R.mipmap.card_4,
+            R.mipmap.card_5,R.mipmap.card_5,R.mipmap.card_6,R.mipmap.card_6,
+            R.mipmap.card_7,R.mipmap.card_7,R.mipmap.card_8,R.mipmap.card_8,
+            R.mipmap.card_9,R.mipmap.card_9,R.mipmap.card_10,R.mipmap.card_10,
     };
     private ImageButton prevButton;
     private int visibleCardCount;
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         }
         int prevCard=0;
         if(prevButton!=null){
-            prevButton.setImageResource(R.mipmap.card_blue_back);
+            prevButton.setImageResource(R.mipmap.card_back);
             prevCard=(Integer)prevButton.getTag();
 
         }
@@ -126,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
             ImageButton b = findViewById(buttonIds[i]);
             b.setTag(cards[i]);
             b.setVisibility(View.VISIBLE);
-            b.setImageResource(R.mipmap.card_blue_back);
+            b.setImageResource(R.mipmap.card_back);
 
         }
         prevButton=null;

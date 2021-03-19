@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/card_blue_back"
+            android:src="@mipmap/card_back"
             android:scaleType="fitCenter"
             android:onClick="onBtnCard"/>
         <ImageButton
@@ -45,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/card_blue_back"
+            android:src="@mipmap/card_back"
             android:scaleType="fitCenter"
             android:onClick="onBtnCard"/>
         <ImageButton
@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/card_blue_back"
+            android:src="@mipmap/card_back"
             android:scaleType="fitCenter"
             android:onClick="onBtnCard"/>
         <ImageButton
@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/card_blue_back"
+            android:src="@mipmap/card_back"
             android:scaleType="fitCenter"
             android:onClick="onBtnCard"/>
     </LinearLayout>
@@ -74,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/card_blue_back"
+            android:src="@mipmap/card_back"
             android:scaleType="fitCenter"
             android:onClick="onBtnCard"/>
         <ImageButton
@@ -82,7 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/card_blue_back"
+            android:src="@mipmap/card_back"
             android:scaleType="fitCenter"
             android:onClick="onBtnCard"/>
         <ImageButton
@@ -90,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/card_blue_back"
+            android:src="@mipmap/card_back"
             android:scaleType="fitCenter"
             android:onClick="onBtnCard"/>
         <ImageButton
@@ -98,7 +98,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/card_blue_back"
+            android:src="@mipmap/card_back"
             android:scaleType="fitCenter"
             android:onClick="onBtnCard"/>
     </LinearLayout>
@@ -112,7 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/card_blue_back"
+            android:src="@mipmap/card_back"
             android:scaleType="fitCenter"
             android:onClick="onBtnCard"/>
         <ImageButton
@@ -120,7 +120,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/card_blue_back"
+            android:src="@mipmap/card_back"
             android:scaleType="fitCenter"
             android:onClick="onBtnCard"/>
         <ImageButton
@@ -128,7 +128,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/card_blue_back"
+            android:src="@mipmap/card_back"
             android:scaleType="fitCenter"
             android:onClick="onBtnCard"/>
         <ImageButton
@@ -136,7 +136,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/card_blue_back"
+            android:src="@mipmap/card_back"
             android:scaleType="fitCenter"
             android:onClick="onBtnCard"/>
     </LinearLayout>
@@ -149,7 +149,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/card_blue_back"
+            android:src="@mipmap/card_back"
             android:scaleType="fitCenter"
             android:onClick="onBtnCard"/>
         <ImageButton
@@ -157,7 +157,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/card_blue_back"
+            android:src="@mipmap/card_back"
             android:scaleType="fitCenter"
             android:onClick="onBtnCard"/>
         <ImageButton
@@ -165,7 +165,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/card_blue_back"
+            android:src="@mipmap/card_back"
             android:scaleType="fitCenter"
             android:onClick="onBtnCard"/>
         <ImageButton
@@ -173,10 +173,49 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/card_blue_back"
+            android:src="@mipmap/card_back"
             android:scaleType="fitCenter"
             android:onClick="onBtnCard"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <ImageButton
+            android:id="@+id/card_40"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/card_back"
+            android:scaleType="fitCenter"
+            android:onClick="onBtnCard"/>
+        <ImageButton
+            android:id="@+id/card_41"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/card_back"
+            android:scaleType="fitCenter"
+            android:onClick="onBtnCard"/>
+        <ImageButton
+            android:id="@+id/card_42"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/card_back"
+            android:scaleType="fitCenter"
+            android:onClick="onBtnCard"/>
+        <ImageButton
+            android:id="@+id/card_43"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/card_back"
+            android:scaleType="fitCenter"
+            android:onClick="onBtnCard"/>
+    </LinearLayout>
+
+
 
 
 
