@@ -16,6 +16,23 @@ public class MainActivity extends AppCompatActivity {
     private TextView outTextView;
     private TextView userEditText;
     private TextView editTextView;
+    private TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            editTextView.setText("String length" + s.length());
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -23,22 +40,8 @@ public class MainActivity extends AppCompatActivity {
         firewallCheckbox = findViewById(R.id.checkbox);
         outTextView =findViewById(R.id.outTextView);
         userEditText =findViewById(R.id.editText);
-        userEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                editTextView.setText("String length"+s.length());
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
+        userEditText.addTextChangedListener(textWatcher);
         editTextView =findViewById(R.id.editTextView);
     }
 
