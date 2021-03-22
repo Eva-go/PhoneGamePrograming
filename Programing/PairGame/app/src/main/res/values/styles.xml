@@ -7,6 +7,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:scaleType">fitCenter</item>
         <item name="android:src">@mipmap/card_back</item>
-        <itme nmae="android:onClick">onBtnCard</itme>
+        <item name="android:onClick">onBtnCard</item>
     </style>
+
 </resources>

@@ -103,16 +103,16 @@ public class MainActivity extends AppCompatActivity {
     private void akRestartGame(){
         // 알람 다이어그램을 사용해서 팜업질문을 할 수 있다.
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Restart");
-        builder.setMessage("Do you want restart game?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        builder.setTitle(R.string.restart_dialog_title);
+        builder.setMessage(R.string.restart_dialog_message);
+        builder.setPositiveButton(R.string.common_Yes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 startGame();
             }
         });
 
-        builder.setNegativeButton("No", null);
+        builder.setNegativeButton(R.string.Common_No, null);
         AlertDialog alert=builder.create();
         alert.show();
     }

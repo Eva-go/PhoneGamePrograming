@@ -34,6 +34,7 @@
         android:layout_weight="1">
         <ImageButton
             android:id="@+id/card_00"
+
             style="@style/card_button" />
         <ImageButton
             android:id="@+id/card_01"
@@ -130,8 +131,7 @@
             style="@style/card_button" />
         <ImageButton
             android:id="@+id/card_43"
-            android:src="@mipmap/card_back"
-            android:onClick="onBtnCard"
+
             style="@style/card_button" />
     </LinearLayout>
 
