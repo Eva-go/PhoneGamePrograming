@@ -3,23 +3,27 @@ package kr.ac.kpu.game.s2016182041.morecontrols;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements TextWatcher {
 
     private CheckBox firewallCheckbox;
     private TextView outTextView;
     private TextView userEditText;
     private TextView editTextView;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         firewallCheckbox = findViewById(R.id.checkbox);
         outTextView =findViewById(R.id.outTextView);
         userEditText =findViewById(R.id.editText);
+        userEditText.addTextChangedListener(this);
         editTextView =findViewById(R.id.editTextView);
     }
 
@@ -36,6 +40,20 @@ public class MainActivity extends AppCompatActivity {
         boolean checked = firewallCheckbox.isChecked();
         String text=checked ? "Checkd Firewall":"Un Checkd Firewall";
         outTextView.setText(text);
+
+    }
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+        editTextView.setText("String length"+s.length());
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
 
     }
 }
