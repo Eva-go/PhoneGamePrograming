@@ -46,15 +46,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         scoreTextView = findViewById(R.id.scoreTextView);
-
         startGame();
 
     }
 
     public void onBtnCard(View view) {
         if(view==prevButton){
+            scoreTextView.getResources().getColor(R.color.purple_700);
             return;
         }
+        scoreTextView.getResources().getColor(R.color.gray);
         int prevCard=0;
         if(prevButton!=null){
             prevButton.setImageResource(R.mipmap.card_back);
