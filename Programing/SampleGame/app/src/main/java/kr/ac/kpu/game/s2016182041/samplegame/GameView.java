@@ -23,6 +23,8 @@ public class GameView extends View {
 
     private float x;
     private float y;
+    private float frameTime;
+    private float lastFrame;
     //xml 속성 적용가능
     public GameView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -42,8 +44,10 @@ public class GameView extends View {
         invalidate();
         Choreographer.getInstance().postFrameCallback(new Choreographer.FrameCallback() {
             @Override
-            public void doFrame(long frameTimeNanos) {
+            public void doFrame(long time) {
+                frameTime = (float) (time-lastFrame)/1000000000;
                 doGameFrame();
+                lastFrame=time;
             }
         });
        // doGameFrame();
@@ -60,6 +64,6 @@ public class GameView extends View {
     protected void onDraw(Canvas canvas) {
         //super.onDraw(canvas); << 부모 부르기
         canvas.drawBitmap(bitmap,x,y,null);
-        Log.d(TAG,"Drawing at"+x+","+y);
+        Log.d(TAG,"Drawing at"+x+","+y+"ft="+frameTime);
     }
 }
