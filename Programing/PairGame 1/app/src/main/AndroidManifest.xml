@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PairGame">
-        <activity android:name=".MainActivity"
+        <activity android:name=".MainActivity" android:configChanges="orientation|screenSize">
             android:configChanges="orientation">
 
             <intent-filter>
