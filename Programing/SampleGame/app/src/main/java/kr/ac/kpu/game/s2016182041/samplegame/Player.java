@@ -6,7 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 
 public class Player {
-    private static int imameWidth;
+    private static int imageWidth;
     private static int imageHeight;
     private float x,y;
     private float dx,dy;
@@ -20,7 +20,7 @@ public class Player {
         if(bitmap == null) {
             Resources res = GameView.view.getResources();
             bitmap = BitmapFactory.decodeResource(res, R.mipmap.plane_240);
-            imameWidth=bitmap.getWidth();
+            imageWidth=bitmap.getWidth();
             imageHeight=bitmap.getHeight();
         }
     }
@@ -42,7 +42,9 @@ public class Player {
     }
 
     public void draw(Canvas canvas) {
-        canvas.drawBitmap(bitmap,this.x,this.y,null);
+        float left = x- imageWidth/2;
+        float top =y- imageHeight/2;
+        canvas.drawBitmap(bitmap,left,top,null);
 
     }
 }
