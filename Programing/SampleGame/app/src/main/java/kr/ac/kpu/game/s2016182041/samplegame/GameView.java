@@ -13,15 +13,19 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.Random;
 import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 
 
 public class GameView extends View {
     private static final String TAG = "Drawing";
+    public static final int BALL_COUNT = 100;
     private Bitmap bitmap;
 
-    private Ball b1,b2;
+//    private Ball b1,b2;
+    ArrayList<Ball> balls =new ArrayList<>(); //ArrayList는 싱글스레드에서 유리 벡터는 멀티 스레드 유리
 
 
     public static float frameTime;
@@ -41,8 +45,9 @@ public class GameView extends View {
 
     private void doGameFrame() {
         //update();
-        b1.update();
-        b2.update();
+        for(Ball b:balls){
+            b.update();
+        }
 //        b1.x+=b1.dx*frameTime;
 //        b1.y +=b1.dy*frameTime;
 //
@@ -66,15 +71,25 @@ public class GameView extends View {
     }
 
     private void initResources() {
-        b1 =new Ball(100,100,500,700);
-        b2 =new Ball(500,500,-500,450);
+        Random rand =new Random();
+        for(int i = 0; i< BALL_COUNT; i++){
+            float x= rand.nextInt(1000);
+            float y= rand.nextInt(1000);
+            float dx = rand.nextFloat() *1000 -500;
+            float dy = rand.nextFloat() *1000 -500;
+            Ball b= new Ball(x,y,dx,dy);
+            balls.add(b);
+        }
+//        b1 =new Ball(100,100,500,700);
+//        b2 =new Ball(500,500,-500,450);
 
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-        b1.draw(canvas);
-        b2.draw(canvas);
+        for(Ball b:balls){
+            b.draw(canvas);
+        }
         //super.onDraw(canvas); << 부모 부르기
 //        canvas.drawBitmap(bitmap,b1.x,b1.y,null);
 //        canvas.drawBitmap(bitmap,b2.x,b2.y,null);
