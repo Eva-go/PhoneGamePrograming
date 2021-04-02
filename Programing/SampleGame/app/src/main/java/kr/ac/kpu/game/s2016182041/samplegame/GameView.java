@@ -27,9 +27,8 @@ public class GameView extends View {
 
 //    private Ball b1,b2;
     Player player;
-    ArrayList<Ball> balls =new ArrayList<>(); //ArrayList는 싱글스레드에서 유리 벡터는 멀티 스레드 유리
-
-
+//    ArrayList<Ball> balls =new ArrayList<>(); //ArrayList는 싱글스레드에서 유리 벡터는 멀티 스레드 유리
+    ArrayList<GameObject> objects =new ArrayList<>();
     public static float frameTime;
     private float lastFrame;
     public static GameView view;
@@ -47,8 +46,8 @@ public class GameView extends View {
 
     private void doGameFrame() {
         //update();
-        for(Ball b:balls){
-            b.update();
+        for(GameObject o:objects){
+            o.update();
         }
 //        b1.x+=b1.dx*frameTime;
 //        b1.y +=b1.dy*frameTime;
@@ -81,8 +80,9 @@ public class GameView extends View {
             float dx = rand.nextFloat() *1000 -500;
             float dy = rand.nextFloat() *1000 -500;
             Ball b= new Ball(x,y,dx,dy);
-            balls.add(b);
+            objects.add(b);
         }
+        objects.add(player);
 //        b1 =new Ball(100,100,500,700);
 //        b2 =new Ball(500,500,-500,450);
 
@@ -91,10 +91,10 @@ public class GameView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         //그리는 순서 중요! 공처음 그 위에 플레이어
-        for(Ball b:balls){
-            b.draw(canvas);
+        for(GameObject o:objects){
+            o.draw(canvas);
         }
-        player.draw(canvas);
+//        player.draw(canvas);
         //super.onDraw(canvas); << 부모 부르기
 //        canvas.drawBitmap(bitmap,b1.x,b1.y,null);
 //        canvas.drawBitmap(bitmap,b2.x,b2.y,null);
