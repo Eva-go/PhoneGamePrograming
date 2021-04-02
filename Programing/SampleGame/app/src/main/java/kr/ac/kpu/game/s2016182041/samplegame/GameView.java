@@ -21,13 +21,16 @@ public class GameView extends View {
     private static final String TAG = "Drawing";
     private Bitmap bitmap;
 
-    private Ball b1 =new Ball(100,100,100,200);
-    private Ball b2 =new Ball(1000,100,100,200);
-    private float frameTime;
+    private Ball b1,b2;
+
+
+    public static float frameTime;
     private float lastFrame;
+    public static GameView view;
     //xml 속성 적용가능
     public GameView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        GameView.view = this;
         initResources();
         startUpdating();
     }
@@ -38,11 +41,13 @@ public class GameView extends View {
 
     private void doGameFrame() {
         //update();
-        b1.x+=b1.dx*frameTime;
-        b1.y +=b1.dy*frameTime;
-
-        b2.x+=b2.dx *frameTime;
-        b2.y+=b2.dy*frameTime;
+        b1.update();
+        b2.update();
+//        b1.x+=b1.dx*frameTime;
+//        b1.y +=b1.dy*frameTime;
+//
+//        b2.x+=b2.dx *frameTime;
+//        b2.y+=b2.dy*frameTime;
 
         //draw();
         invalidate();
@@ -61,15 +66,17 @@ public class GameView extends View {
     }
 
     private void initResources() {
-        Resources res = getResources();
-        bitmap= BitmapFactory.decodeResource(res,R.mipmap.soccer_ball_240);
+        b1 =new Ball(100,100,100,200);
+        b2 =new Ball(500,500,-50,200);
 
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
+        b1.draw(canvas);
+        b2.draw(canvas);
         //super.onDraw(canvas); << 부모 부르기
-        canvas.drawBitmap(bitmap,b1.x,b1.y,null);
-        canvas.drawBitmap(bitmap,b2.x,b2.y,null);
+//        canvas.drawBitmap(bitmap,b1.x,b1.y,null);
+//        canvas.drawBitmap(bitmap,b2.x,b2.y,null);
     }
 }
