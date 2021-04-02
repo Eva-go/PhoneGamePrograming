@@ -9,6 +9,7 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Choreographer;
+import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -21,10 +22,11 @@ import java.util.logging.LogRecord;
 
 public class GameView extends View {
     private static final String TAG = "Drawing";
-    public static final int BALL_COUNT = 100;
+    public static final int BALL_COUNT = 10;
     private Bitmap bitmap;
 
 //    private Ball b1,b2;
+    Player player;
     ArrayList<Ball> balls =new ArrayList<>(); //ArrayList는 싱글스레드에서 유리 벡터는 멀티 스레드 유리
 
 
@@ -71,6 +73,7 @@ public class GameView extends View {
     }
 
     private void initResources() {
+        player =new Player(100,100,0,0);
         Random rand =new Random();
         for(int i = 0; i< BALL_COUNT; i++){
             float x= rand.nextInt(1000);
@@ -87,11 +90,22 @@ public class GameView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        //그리는 순서 중요! 공처음 그 위에 플레이어
         for(Ball b:balls){
             b.draw(canvas);
         }
+        player.draw(canvas);
         //super.onDraw(canvas); << 부모 부르기
 //        canvas.drawBitmap(bitmap,b1.x,b1.y,null);
 //        canvas.drawBitmap(bitmap,b2.x,b2.y,null);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int action = event.getAction();
+        if(action == MotionEvent.ACTION_DOWN){ //터치한다
+            player.moveTo(event.getX(),event.getY());
+        }
+        return false;
     }
 }
