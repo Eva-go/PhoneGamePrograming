@@ -1,4 +1,4 @@
-https://youtu.be/lapSCck-PzU
+발표 영상: https://youtu.be/lapSCck-PzU
 
 게임 컨셉
 High Concept: RPG와 카드 덱 빌딩을 한번에
