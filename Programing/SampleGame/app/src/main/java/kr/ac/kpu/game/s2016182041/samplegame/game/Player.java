@@ -17,7 +17,8 @@ public class Player implements GameObject {
     private float tx, ty;
     private float speed;
     private static Bitmap bitmap;
-    private Angel angel;
+    private float angle;
+
 
     public Player(float x, float y, float dx, float dy) {
         this.x = x;
@@ -43,8 +44,8 @@ public class Player implements GameObject {
         this.angle = (float) Math.atan2(delta_y, delta_x);
         MainGame game = MainGame.get();
         float move_dist = speed * game.frameTime;
-        this.dx = (float) (move_dist * Math.cos(angel));
-        this.dy = (float) (move_dist * Math.sin(angel));
+        this.dx = (float) (move_dist * Math.cos(angle));
+        this.dy = (float) (move_dist * Math.sin(angle));
     }
 
     public void update() {
