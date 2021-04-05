@@ -1,6 +1,5 @@
 package kr.ac.kpu.game.s2016182041.samplegame.game;
 
-
 import android.graphics.Canvas;
 import android.view.MotionEvent;
 
