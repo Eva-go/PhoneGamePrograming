@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import kr.ac.kpu.game.s2016182041.samplegame.framework.GameObject;
+import kr.ac.kpu.game.s2016182041.samplegame.ui.view.GameView;
 
 public class MainGame {
     private static final int BALL_COUNT = 10;
@@ -24,7 +25,9 @@ public class MainGame {
     ArrayList<GameObject> objects = new ArrayList<>();
 
     public void initResources() {
-        player = new Player(100, 100, 0, 0);
+        int w = GameView.view.getWidth();
+        int h = GameView.view.getHeight();
+        player = new Player(w/2, h/2, 0, 0);
         Random rand = new Random();
         for (int i = 0; i < BALL_COUNT; i++) {
             float x = rand.nextInt(1000);
