@@ -1,11 +1,15 @@
-package kr.ac.kpu.game.s2016182041.samplegame;
+package kr.ac.kpu.game.s2016182041.samplegame.game;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 
-public class Player implements GameObject{
+import kr.ac.kpu.game.s2016182041.samplegame.ui.view.GameView;
+import kr.ac.kpu.game.s2016182041.samplegame.R;
+import kr.ac.kpu.game.s2016182041.samplegame.framework.GameObject;
+
+public class Player implements GameObject {
     private static int imageWidth;
     private static int imageHeight;
     private float x,y;

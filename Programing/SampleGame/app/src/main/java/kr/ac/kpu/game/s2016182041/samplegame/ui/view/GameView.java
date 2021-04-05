@@ -1,13 +1,9 @@
-package kr.ac.kpu.game.s2016182041.samplegame;
+package kr.ac.kpu.game.s2016182041.samplegame.ui.view;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.Choreographer;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,8 +12,10 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
+
+import kr.ac.kpu.game.s2016182041.samplegame.framework.GameObject;
+import kr.ac.kpu.game.s2016182041.samplegame.game.Ball;
+import kr.ac.kpu.game.s2016182041.samplegame.game.Player;
 
 
 public class GameView extends View {
