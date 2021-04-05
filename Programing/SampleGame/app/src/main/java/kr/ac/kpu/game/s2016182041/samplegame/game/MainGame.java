@@ -13,21 +13,27 @@ public class MainGame {
     private static final int BALL_COUNT = 10;
     // singleton
     private static MainGame instance;
+
     public static MainGame get() {
         if (instance == null) {
             instance = new MainGame();
         }
         return instance;
     }
+
     public float frameTime;
+    private boolean initialized;
 
     Player player;
     ArrayList<GameObject> objects = new ArrayList<>();
 
     public void initResources() {
+        if (initialized) {
+            return;
+        }
         int w = GameView.view.getWidth();
         int h = GameView.view.getHeight();
-        player = new Player(w/2, h/2, 0, 0);
+        player = new Player(w / 2, h / 2, 0, 0);
         Random rand = new Random();
         for (int i = 0; i < BALL_COUNT; i++) {
             float x = rand.nextInt(1000);
@@ -38,16 +44,22 @@ public class MainGame {
             objects.add(b);
         }
         objects.add(player);
+
+        initialized = true;
     }
 
     public void update() {
+        //if (!initialized) return;
+
         for (GameObject o : objects) {
             o.update();
         }
     }
 
     public void draw(Canvas canvas) {
-        for (GameObject o: objects) {
+        //if (!initialized) return;
+
+        for (GameObject o : objects) {
             o.draw(canvas);
         }
     }
