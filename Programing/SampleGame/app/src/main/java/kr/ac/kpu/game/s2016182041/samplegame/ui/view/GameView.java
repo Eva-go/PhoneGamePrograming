@@ -16,18 +16,15 @@ import java.util.Random;
 import kr.ac.kpu.game.s2016182041.samplegame.framework.GameObject;
 import kr.ac.kpu.game.s2016182041.samplegame.game.Ball;
 import kr.ac.kpu.game.s2016182041.samplegame.game.Player;
+import kr.ac.kpu.game.s2016182041.samplegame.game.MainGame;
 
 
 public class GameView extends View {
     private static final String TAG = "Drawing";
-    public static final int BALL_COUNT = 10;
     private Bitmap bitmap;
 
 //    private Ball b1,b2;
-    Player player;
 //    ArrayList<Ball> balls =new ArrayList<>(); //ArrayList는 싱글스레드에서 유리 벡터는 멀티 스레드 유리
-    ArrayList<GameObject> objects =new ArrayList<>();
-    public static float frameTime;
     private float lastFrame;
     public static GameView view;
     //xml 속성 적용가능
@@ -58,10 +55,12 @@ public class GameView extends View {
         Choreographer.getInstance().postFrameCallback(new Choreographer.FrameCallback() {
             @Override
             public void doFrame(long time) {
+                MainGame game = MainGame.get();
+                game.update();
                 if(lastFrame== 0){
                     lastFrame=time;
                 }
-                frameTime = (float) (time-lastFrame)/1000000000;
+                game.frameTime = (float) (time-lastFrame)/1000000000;
                 doGameFrame();
                 lastFrame=time;
             }
