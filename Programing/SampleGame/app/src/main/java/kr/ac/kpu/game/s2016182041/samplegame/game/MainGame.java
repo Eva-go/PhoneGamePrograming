@@ -1,6 +1,7 @@
 package kr.ac.kpu.game.s2016182041.samplegame.game;
 
 import android.graphics.Canvas;
+import android.util.Log;
 import android.view.MotionEvent;
 
 import java.util.ArrayList;
@@ -11,16 +12,15 @@ import kr.ac.kpu.game.s2016182041.samplegame.ui.view.GameView;
 
 public class MainGame {
     private static final int BALL_COUNT = 10;
+    private static final String TAG = MainGame.class.getSimpleName();
     // singleton
     private static MainGame instance;
-
     public static MainGame get() {
         if (instance == null) {
             instance = new MainGame();
         }
         return instance;
     }
-
     public float frameTime;
     private boolean initialized;
 
@@ -33,7 +33,7 @@ public class MainGame {
         }
         int w = GameView.view.getWidth();
         int h = GameView.view.getHeight();
-        player = new Player(w / 2, h / 2, 0, 0);
+        player = new Player(w/2, h/2, 0, 0);
         Random rand = new Random();
         for (int i = 0; i < BALL_COUNT; i++) {
             float x = rand.nextInt(1000);
@@ -50,7 +50,6 @@ public class MainGame {
 
     public void update() {
         //if (!initialized) return;
-
         for (GameObject o : objects) {
             o.update();
         }
@@ -58,8 +57,7 @@ public class MainGame {
 
     public void draw(Canvas canvas) {
         //if (!initialized) return;
-
-        for (GameObject o : objects) {
+        for (GameObject o: objects) {
             o.draw(canvas);
         }
     }
@@ -75,13 +73,15 @@ public class MainGame {
 
     public void add(GameObject gameObject) {
         objects.add(gameObject);
+        Log.d(TAG, "<A> object count = " + objects.size());
     }
 
-    public void remove(GameObject gameObject){
+    public void remove(GameObject gameObject) {
         GameView.view.post(new Runnable() {
             @Override
             public void run() {
                 objects.remove(gameObject);
+                Log.d(TAG, "<R> object count = " + objects.size());
             }
         });
     }

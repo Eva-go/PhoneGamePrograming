@@ -23,14 +23,13 @@ public class GameView extends View {
     public GameView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         GameView.view = this;
-        MainGame game = MainGame.get();
-        game.initResources();
         startUpdating();
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        Log.d(TAG, "onsize: " + w + "," + h);
+        //super.onSizeChanged(w, h, oldw, oldh);
+        Log.d(TAG, "onSize: " + w + "," + h);
         MainGame game = MainGame.get();
         game.initResources();
     }
@@ -70,16 +69,3 @@ public class GameView extends View {
         return game.onTouchEvent(event);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
