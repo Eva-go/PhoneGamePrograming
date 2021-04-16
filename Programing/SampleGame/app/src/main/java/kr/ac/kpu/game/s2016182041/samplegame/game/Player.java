@@ -10,7 +10,7 @@ import android.util.Log;
 import kr.ac.kpu.game.s2016182041.samplegame.R;
 import kr.ac.kpu.game.s2016182041.samplegame.framework.GameObject;
 import kr.ac.kpu.game.s2016182041.samplegame.ui.view.GameView;
-
+import kr.ac.kpu.game.s2016182041.samplegame.framework.Sound;
 public class Player implements GameObject {
     private static final String TAG = Player.class.getSimpleName();
     private static int imageWidth;
@@ -41,8 +41,7 @@ public class Player implements GameObject {
     }
 
     public void moveTo(float x, float y) {
-        mediaPlayer.seekTo(0);
-        mediaPlayer.start();
+        Sound.play(R.raw.hadouken);
         Bullet bullet = new Bullet(this.x, this.y, x, y);
         MainGame game = MainGame.get();
         game.add(bullet);
