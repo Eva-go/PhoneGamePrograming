@@ -2,6 +2,8 @@ package kr.ac.kpu.game.s2016182041.samplegame.game;
 
 import android.graphics.Canvas;
 
+import java.util.Random;
+
 import kr.ac.kpu.game.s2016182041.samplegame.R;
 import kr.ac.kpu.game.s2016182041.samplegame.framework.AnimationGameBitmap;
 import kr.ac.kpu.game.s2016182041.samplegame.framework.GameObject;
@@ -13,7 +15,7 @@ public class Bullet implements GameObject {
     private float x, y;
     private float dx, dy;
     private static float FRAME_RATE = 8.5f;
-    private static AnimationGameBitmap bitmap;
+    private AnimationGameBitmap bitmap;
 
 //    Paint paint = new Paint();
 
@@ -31,9 +33,10 @@ public class Bullet implements GameObject {
         this.dy = (float) (move_dist * Math.sin(angle));
 
 //        paint.setColor(0xFFFF0000);
-        if (bitmap == null) {
-            bitmap = new AnimationGameBitmap(R.mipmap.bullet_hadoken, FRAME_RATE, 6);
-        }
+        Random r = new Random();
+        float frameRate = FRAME_RATE * (r.nextFloat()* 0.4f + 0.8f);
+        bitmap = new AnimationGameBitmap(R.mipmap.bullet_hadoken, FRAME_RATE, 6);
+
     }
 
     public void update() {
