@@ -7,11 +7,13 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
+import java.util.HashMap;
+
 import kr.ac.kpu.game.s2016182041.samplegame.ui.view.GameView;
 
 public class AnimationGameBitmap {
     private static final int PIXEL_MULTIPLIER = 4;
-    private final Bitmap bitmap;
+    private Bitmap bitmap;
     private final int imageWidth;
     private final int imageHeight;
     private final int frameWidth;
@@ -19,12 +21,16 @@ public class AnimationGameBitmap {
     private int frameIndex;
     private final float framesPerSecond;
     private final int frameCount;
-
+    private HashMap<Integer,Bitmap> bitmaps =new HashMap<Integer, Bitmap>();
     public AnimationGameBitmap(int resId, float framesPerSecond, int frameCount){
         Resources res = GameView.view.getResources();
         BitmapFactory.Options opts =new BitmapFactory.Options();
         opts.inScaled =false;
-        bitmap= BitmapFactory.decodeResource(res,resId,opts);
+        bitmap = bitmaps.get(resId); //한번이라도 불리면 키값 이용 다시사용
+        if(bitmap == null){
+            bitmap = BitmapFactory.decodeResource(res,resId,opts);
+            bitmaps.put(resId,bitmap);
+        }
         imageWidth = bitmap.getWidth();
         imageHeight= bitmap.getHeight();
         if(frameCount==0){
