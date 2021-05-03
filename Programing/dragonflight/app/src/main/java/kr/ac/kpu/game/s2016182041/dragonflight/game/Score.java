@@ -19,6 +19,10 @@ public class Score implements GameObject {
         this.score = score;
     }
 
+    public void addScore(int amount) {
+        setScore(this.score+amount);
+    }
+
     private int score;
     public Score(int right, int top){
         bitmap = GameBitmap.load(R.mipmap.number_24x32);
@@ -49,4 +53,6 @@ public class Score implements GameObject {
             value /= 10;
         }
     }
+
+
 }
