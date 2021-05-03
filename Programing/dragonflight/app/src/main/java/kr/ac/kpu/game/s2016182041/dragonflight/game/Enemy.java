@@ -2,15 +2,17 @@ package kr.ac.kpu.game.s2016182041.dragonflight.game;
 
 import android.graphics.Canvas;
 import android.graphics.RectF;
+import android.util.Log;
 
 import kr.ac.kpu.game.s2016182041.dragonflight.R;
 import kr.ac.kpu.game.s2016182041.dragonflight.framework.AnimationGameBitmap;
 import kr.ac.kpu.game.s2016182041.dragonflight.framework.BoxCollidable;
 import kr.ac.kpu.game.s2016182041.dragonflight.framework.GameBitmap;
 import kr.ac.kpu.game.s2016182041.dragonflight.framework.GameObject;
+import kr.ac.kpu.game.s2016182041.dragonflight.framework.Recyclable;
 import kr.ac.kpu.game.s2016182041.dragonflight.ui.view.GameView;
 
-public class Enemy implements GameObject, BoxCollidable {
+public class Enemy implements GameObject, BoxCollidable, Recyclable {
     private static final float FRAMES_PER_SECOND = 8.0f;
     private static final int[] RESOURCE_IDS = {
             R.mipmap.enemy_01, R.mipmap.enemy_02, R.mipmap.enemy_03, R.mipmap.enemy_04, R.mipmap.enemy_05,
@@ -18,13 +20,28 @@ public class Enemy implements GameObject, BoxCollidable {
             R.mipmap.enemy_11, R.mipmap.enemy_12, R.mipmap.enemy_13, R.mipmap.enemy_14, R.mipmap.enemy_15,
             R.mipmap.enemy_16, R.mipmap.enemy_17, R.mipmap.enemy_18, R.mipmap.enemy_19, R.mipmap.enemy_20,
     };
-    private final float x;
-    private final GameBitmap bitmap;
-    private final int level;
-    private float y;
-    private final int speed;
+    private static final String TAG =Enemy.class.getSimpleName() ;
+    private  float x;
+    private  GameBitmap bitmap;
+    private  int level;
+    private  int y;
+    private  int speed;
 
-    public Enemy(int level, float x, float y, int speed) {
+    private Enemy() {
+        Log.d(TAG,"Enemy constructor");
+    }
+    public static  Enemy get (int level,int x, int y, int i,int speed){
+        MainGame game =MainGame.get();
+        Enemy enemy = (Enemy)game.get(Enemy.class);
+        if(enemy==null){
+            enemy =new Enemy();
+        }
+
+        enemy.init(level,x,y,i,speed);
+        return enemy;
+    }
+
+    private void init(int level, int x, int y, int i,int speed) {
         this.x = x;
         this.y = y;
         this.speed = speed;
@@ -53,5 +70,11 @@ public class Enemy implements GameObject, BoxCollidable {
     @Override
     public void getBoundingRect(RectF rect) {
         bitmap.getBoundingRect(x, y, rect);
+    }
+
+    @Override
+    public void recycle() {
+        //재활용통에 들어가는 시점에 불리는 함수. 현재는 할일이 없음
+
     }
 }
