@@ -8,13 +8,11 @@ import android.util.Log;
 
 import java.util.HashMap;
 
-import kr.ac.kpu.game.s2016182041.dragonflight.R;
-
 public class Sound {
     private static final String TAG = Sound.class.getSimpleName();
     private static SoundPool soundPool;
     private static final int[] SOUND_IDS = {
-            //R.raw.hadouken
+//            R.raw.hadouken
     };
     private static HashMap<Integer, Integer> soundIdMap = new HashMap<>();
 

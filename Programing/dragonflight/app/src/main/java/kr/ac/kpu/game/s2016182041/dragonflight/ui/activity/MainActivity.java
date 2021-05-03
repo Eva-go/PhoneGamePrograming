@@ -1,11 +1,10 @@
 package kr.ac.kpu.game.s2016182041.dragonflight.ui.activity;
 
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import kr.ac.kpu.game.s2016182041.dragonflight.R;
+import android.os.Bundle;
 
+import kr.ac.kpu.game.s2016182041.dragonflight.R;
 
 public class MainActivity extends AppCompatActivity {
 

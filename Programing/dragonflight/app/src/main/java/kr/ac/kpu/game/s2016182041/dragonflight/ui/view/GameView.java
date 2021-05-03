@@ -16,6 +16,7 @@ import kr.ac.kpu.game.s2016182041.dragonflight.game.MainGame;
 public class GameView extends View {
     private static final String TAG = GameView.class.getSimpleName();
 
+    public static final float MULTIPLIER = 2;
     //    private Ball b1, b2;
 
     private long lastFrame;
@@ -58,29 +59,6 @@ public class GameView extends View {
                 update();
                 lastFrame = time;
                 requestCallback();
-            }
-        });
-    }
-
-    private void startUpdating() {
-        doGameFrame();
-    }
-
-    private void doGameFrame() {
-        MainGame game = MainGame.get();
-        game.update();
-
-        invalidate();
-
-        Choreographer.getInstance().postFrameCallback(new Choreographer.FrameCallback() {
-            @Override
-            public void doFrame(long time) {
-                if (lastFrame == 0) {
-                    lastFrame = time;
-                }
-                game.frameTime = (float) (time - lastFrame) / 1_000_000_000;
-                doGameFrame();
-                lastFrame = time;
             }
         });
     }
