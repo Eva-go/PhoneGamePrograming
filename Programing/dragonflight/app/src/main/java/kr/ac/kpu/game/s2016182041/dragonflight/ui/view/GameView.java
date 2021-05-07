@@ -15,8 +15,9 @@ import kr.ac.kpu.game.s2016182041.dragonflight.game.MainGame;
 
 public class GameView extends View {
     private static final String TAG = GameView.class.getSimpleName();
+    public static float MULTIPLIER;
+    private boolean running;
 
-    public static final float MULTIPLIER = 2;
     //    private Ball b1, b2;
 
     private long lastFrame;
@@ -26,6 +27,7 @@ public class GameView extends View {
         super(context, attrs);
         GameView.view = this;
         Sound.init(context);
+        running = true;
 //        startUpdating();
     }
 
@@ -48,6 +50,9 @@ public class GameView extends View {
     }
 
     private void requestCallback() {
+        if(!running){
+            return;
+        }
         Choreographer.getInstance().postFrameCallback(new Choreographer.FrameCallback() {
             @Override
             public void doFrame(long time) {
@@ -73,6 +78,17 @@ public class GameView extends View {
     public boolean onTouchEvent(MotionEvent event) {
         MainGame game = MainGame.get();
         return game.onTouchEvent(event);
+    }
+
+    public void pauseGame() {
+        running = false;
+    }
+
+    public void resumeGame() {
+        if(!running){
+            running =true;
+            requestCallback();
+        }
     }
 }
 
