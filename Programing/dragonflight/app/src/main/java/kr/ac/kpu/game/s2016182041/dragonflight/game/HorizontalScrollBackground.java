@@ -9,14 +9,14 @@ import kr.ac.kpu.game.s2016182041.dragonflight.framework.GameBitmap;
 import kr.ac.kpu.game.s2016182041.dragonflight.framework.GameObject;
 import kr.ac.kpu.game.s2016182041.dragonflight.ui.view.GameView;
 
-public class VerticalScrollBackground implements GameObject {
+public class HorizontalScrollBackground implements GameObject {
     private final Bitmap bitmap;
     private final float speed;
     private float scroll;
 
     private Rect srcRect = new Rect();
     private RectF dstRect = new RectF();
-    public VerticalScrollBackground(int resId,int speed){
+    public HorizontalScrollBackground(int resId, int speed){
         this.speed = speed * GameView.MULTIPLIER;
         bitmap= GameBitmap.load(resId);
         int w = bitmap.getWidth();
@@ -48,7 +48,8 @@ public class VerticalScrollBackground implements GameObject {
         if(curr > 0) curr -= dh;
 
         while (curr < vh){
-            dstRect.set(0,curr,vw,curr + dh); //l,t,r,b
+            dstRect.set(curr,0,curr + dh,vw);
+            //l,t,r,b
             canvas.drawBitmap(bitmap,srcRect,dstRect,null);
             curr += dh;
         }

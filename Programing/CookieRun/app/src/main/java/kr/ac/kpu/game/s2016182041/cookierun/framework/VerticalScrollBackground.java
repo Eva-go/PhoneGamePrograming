@@ -1,13 +1,12 @@
-package kr.ac.kpu.game.s2016182041.dragonflight.game;
+package kr.ac.kpu.game.s2016182041.cookierun.framework;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
-import kr.ac.kpu.game.s2016182041.dragonflight.framework.GameBitmap;
-import kr.ac.kpu.game.s2016182041.dragonflight.framework.GameObject;
-import kr.ac.kpu.game.s2016182041.dragonflight.ui.view.GameView;
+import kr.ac.kpu.game.s2016182041.cookierun.framework.view.GameView;
+
 
 public class VerticalScrollBackground implements GameObject {
     private final Bitmap bitmap;
