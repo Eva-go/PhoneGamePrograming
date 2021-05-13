@@ -7,6 +7,7 @@ import android.view.MotionEvent;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import kr.ac.kpu.game.s2016182041.cookierun.R;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.utils.CollisionHelper;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.view.GameView;
 import kr.ac.kpu.game.s2016182041.cookierun.game.Player;
@@ -67,9 +68,10 @@ public class MainGame {
 
         int margin = (int)(20*GameView.MULTIPLIER);
 
-//        VerticalScrollBackground bg = new VerticalScrollBackground(R.mipmap.bg_city,10);
-//        add(Layer.bg1,bg);
-//
+        add(Layer.bg1,new VerticalScrollBackground(R.mipmap.cookie_run_bg_1,10));
+        add(Layer.bg1,new VerticalScrollBackground(R.mipmap.cookie_run_bg_2,20));
+        add(Layer.bg1,new VerticalScrollBackground(R.mipmap.cookie_run_bg_3,30));
+
 //        VerticalScrollBackground clouds = new VerticalScrollBackground(R.mipmap.clouds,20);
 //        add(Layer.bg2,clouds);
 
