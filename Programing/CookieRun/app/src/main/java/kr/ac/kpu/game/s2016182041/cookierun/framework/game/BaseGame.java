@@ -9,26 +9,34 @@ import java.util.HashMap;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.GameObject;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.Recyclable;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.view.GameView;
-import kr.ac.kpu.game.s2016182041.cookierun.game.Player;
-import kr.ac.kpu.game.s2016182041.cookierun.game.Score;
 
 
-public class MainGame {
-    private static final String TAG = MainGame.class.getSimpleName();
+
+public class BaseGame {
+    private static final String TAG = BaseGame.class.getSimpleName();
     // singleton
-    private static MainGame instance;
-    private Player player;
-    private Score score;
+    private static BaseGame instance;
+    private Object vertSpeed;
 
-    public static MainGame get() {
-        if (instance == null) {
-            instance = new MainGame();
-        }
+    private enum  State{
+        running,jump,doubleJump,slide,hit
+    }
+
+    private State state = State.running;
+
+
+    public static BaseGame get() {
+//        if (instance == null) {
+//            instance = new BaseGame();
+//        }
         return instance;
     }
     public float frameTime;
-    private boolean initialized;
 
+
+    protected BaseGame(){
+        instance = this;
+    }
     //    Player player;
     ArrayList<ArrayList<GameObject>> layers;
     private static HashMap<Class, ArrayList<GameObject>> recycleBin = new HashMap<>();
@@ -48,36 +56,12 @@ public class MainGame {
         return array.remove(0);
     }
 
-    public enum Layer{
-        bg1,enemy,bullet,player,bg2,ui,controller,ENENY_COUNT
-    }
 
     public boolean initResources() {
-        if (initialized) {
-            return false;
-        }
-        int w = GameView.view.getWidth();
-        int h = GameView.view.getHeight();
-
-        initLayers(Layer.ENENY_COUNT.ordinal());
-
-        player = new Player(w/2, h - 300);
-        //layers.get(Layer.player.ordinal()).add(player);
-        add(Layer.player,player);
-
-        int margin = (int)(20*GameView.MULTIPLIER);
-
-//        VerticalScrollBackground bg = new VerticalScrollBackground(R.mipmap.bg_city,10);
-//        add(Layer.bg1,bg);
-//
-//        VerticalScrollBackground clouds = new VerticalScrollBackground(R.mipmap.clouds,20);
-//        add(Layer.bg2,clouds);
-
-        initialized = true;
-        return true;
+        return false;
     }
 
-    private void initLayers(int layerCount) {
+    protected void initLayers(int layerCount) {
         layers = new ArrayList<>();
         for(int i=0; i< layerCount;i++){
             layers.add(new ArrayList<>());
@@ -105,20 +89,14 @@ public class MainGame {
     }
 
     public boolean onTouchEvent(MotionEvent event) {
-        int action = event.getAction();
-//        if (action == MotionEvent.ACTION_DOWN) {
-        if (action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_MOVE) {
-            player.moveTo(event.getX(), event.getY());
-            return true;
-        }
         return false;
     }
 
-    public void add(Layer layer,GameObject gameObject) {
+    public void add(int layerIndex,GameObject gameObject) {
         GameView.view.post(new Runnable() {
             @Override
             public void run() {
-                ArrayList<GameObject>objects = layers.get(layer.ordinal());
+                ArrayList<GameObject>objects = layers.get(layerIndex);
                 objects.add(gameObject);
             }
         });
@@ -142,5 +120,11 @@ public class MainGame {
 //                Log.d(TAG, "<R> object count = " + objects.size());
             }
         });
+    }
+    public void jump(){
+       if(State.jump ==state){
+           float y = this.y *vertSpeed;
+           
+       }
     }
 }

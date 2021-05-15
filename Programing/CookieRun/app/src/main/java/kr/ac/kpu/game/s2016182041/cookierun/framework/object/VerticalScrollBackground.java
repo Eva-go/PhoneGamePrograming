@@ -1,10 +1,12 @@
-package kr.ac.kpu.game.s2016182041.cookierun.framework;
+package kr.ac.kpu.game.s2016182041.cookierun.framework.object;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
+import kr.ac.kpu.game.s2016182041.cookierun.framework.game.BaseGame;
+import kr.ac.kpu.game.s2016182041.cookierun.framework.bitmap.GameBitmap;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.GameObject;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.view.GameView;
 
@@ -31,7 +33,7 @@ public class VerticalScrollBackground implements GameObject {
     }
     @Override
     public void update() {
-        MainGame game = MainGame.get();
+        BaseGame game = BaseGame.get();
         float amount = speed*game.frameTime;
         scroll +=amount;
     }

@@ -4,11 +4,10 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 
 import kr.ac.kpu.game.s2016182041.cookierun.R;
-import kr.ac.kpu.game.s2016182041.cookierun.framework.BoxCollidable;
-import kr.ac.kpu.game.s2016182041.cookierun.framework.GameBitmap;
-import kr.ac.kpu.game.s2016182041.cookierun.framework.GameObject;
-import kr.ac.kpu.game.s2016182041.cookierun.framework.MainGame;
-
+import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.BoxCollidable;
+import kr.ac.kpu.game.s2016182041.cookierun.framework.bitmap.GameBitmap;
+import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.GameObject;
+import kr.ac.kpu.game.s2016182041.cookierun.framework.game.BaseGame;
 
 public class Player implements GameObject, BoxCollidable {
     private static final String TAG = Player.class.getSimpleName();
@@ -21,6 +20,7 @@ public class Player implements GameObject, BoxCollidable {
     private float speed;
     private GameBitmap planeBitmap;
     private GameBitmap fireBitmap;
+    private Object state;
 
     public Player(float x, float y) {
         this.x = x;
@@ -28,7 +28,7 @@ public class Player implements GameObject, BoxCollidable {
         this.tx = x;
         this.ty = 0;
         this.speed = 800;
-//        this.planeBitmap = new GameBitmap(R.mipmap.fighter);
+        this.planeBitmap = new GameBitmap(R.mipmap.cookie);
 //        this.fireBitmap = new GameBitmap(R.mipmap.laser_0);
         this.fireTime = 0.0f;
     }
@@ -39,7 +39,7 @@ public class Player implements GameObject, BoxCollidable {
     }
 
     public void update() {
-        MainGame game = MainGame.get();
+        BaseGame game = BaseGame.get();
         float dx = speed * game.frameTime;
         if (tx < x) { // move left
             dx = -dx;
@@ -72,5 +72,9 @@ public class Player implements GameObject, BoxCollidable {
     @Override
     public void getBoundingRect(RectF rect) {
         planeBitmap.getBoundingRect(x, y, rect);
+    }
+
+    public void jump(){
+//        if(state != )
     }
 }
