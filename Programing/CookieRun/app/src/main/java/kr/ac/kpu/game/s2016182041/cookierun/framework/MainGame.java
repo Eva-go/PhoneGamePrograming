@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import kr.ac.kpu.game.s2016182041.cookierun.R;
+import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.GameObject;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.utils.CollisionHelper;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.view.GameView;
 import kr.ac.kpu.game.s2016182041.cookierun.game.Player;
