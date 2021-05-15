@@ -10,20 +10,10 @@ import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.GameObject;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.Recyclable;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.view.GameView;
 
-
-
 public class BaseGame {
     private static final String TAG = BaseGame.class.getSimpleName();
     // singleton
     private static BaseGame instance;
-    private Object vertSpeed;
-
-    private enum  State{
-        running,jump,doubleJump,slide,hit
-    }
-
-    private State state = State.running;
-
 
     public static BaseGame get() {
 //        if (instance == null) {
@@ -33,8 +23,7 @@ public class BaseGame {
     }
     public float frameTime;
 
-
-    protected BaseGame(){
+    protected BaseGame() {
         instance = this;
     }
     //    Player player;
@@ -56,32 +45,30 @@ public class BaseGame {
         return array.remove(0);
     }
 
-
     public boolean initResources() {
+        // prints this is error
         return false;
     }
 
     protected void initLayers(int layerCount) {
         layers = new ArrayList<>();
-        for(int i=0; i< layerCount;i++){
+        for (int i = 0; i < layerCount; i++) {
             layers.add(new ArrayList<>());
         }
     }
 
     public void update() {
         //if (!initialized) return;
-        for (ArrayList<GameObject>objects:layers){
+        for (ArrayList<GameObject> objects: layers) {
             for (GameObject o : objects) {
                 o.update();
             }
         }
-
     }
 
     public void draw(Canvas canvas) {
         //if (!initialized) return;
-
-        for (ArrayList<GameObject>objects:layers){
+        for (ArrayList<GameObject> objects: layers) {
             for (GameObject o : objects) {
                 o.draw(canvas);
             }
@@ -92,11 +79,11 @@ public class BaseGame {
         return false;
     }
 
-    public void add(int layerIndex,GameObject gameObject) {
+    public void add(int layerIndex, GameObject gameObject) {
         GameView.view.post(new Runnable() {
             @Override
             public void run() {
-                ArrayList<GameObject>objects = layers.get(layerIndex);
+                ArrayList<GameObject> objects = layers.get(layerIndex);
                 objects.add(gameObject);
             }
         });
@@ -104,27 +91,29 @@ public class BaseGame {
     }
 
     public void remove(GameObject gameObject) {
-        if (gameObject instanceof Recyclable) {
-            ((Recyclable) gameObject).recycle();
-            recycle(gameObject);
-        }
-        GameView.view.post(new Runnable() {
+        remove(gameObject, true);
+    }
+    public void remove(GameObject gameObject, boolean delayed) {
+        Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                for (ArrayList<GameObject>objects:layers) {
+                for (ArrayList<GameObject> objects: layers) {
                     boolean removed = objects.remove(gameObject);
-                    if(removed){
+                    if (removed) {
+                        if (gameObject instanceof Recyclable) {
+                            ((Recyclable) gameObject).recycle();
+                            recycle(gameObject);
+                        }
+                        //Log.d(TAG, "Removed: " + gameObject);
                         break;
                     }
                 }
-//                Log.d(TAG, "<R> object count = " + objects.size());
             }
-        });
-    }
-    public void jump(){
-       if(State.jump ==state){
-           float y = this.y *vertSpeed;
-           
-       }
+        };
+        if (delayed) {
+            GameView.view.post(runnable);
+        } else {
+            runnable.run();
+        }
     }
 }

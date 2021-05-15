@@ -13,12 +13,11 @@ import androidx.annotation.Nullable;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.game.BaseGame;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.utils.Sound;
 
-
 public class GameView extends View {
     private static final String TAG = GameView.class.getSimpleName();
-    public static float MULTIPLIER;
-    private boolean running;
 
+    public static float MULTIPLIER = 2;
+    private boolean running;
     //    private Ball b1, b2;
 
     private long lastFrame;
@@ -51,7 +50,8 @@ public class GameView extends View {
     }
 
     private void requestCallback() {
-        if(!running){
+        if (!running) {
+            Log.d(TAG, "Not running. Not calling Choreographer.postFrameCallback()");
             return;
         }
         Choreographer.getInstance().postFrameCallback(new Choreographer.FrameCallback() {
@@ -86,9 +86,9 @@ public class GameView extends View {
     }
 
     public void resumeGame() {
-        if(!running){
-            running =true;
-            lastFrame=0;
+        if (!running) {
+            running = true;
+            lastFrame = 0;
             requestCallback();
         }
     }

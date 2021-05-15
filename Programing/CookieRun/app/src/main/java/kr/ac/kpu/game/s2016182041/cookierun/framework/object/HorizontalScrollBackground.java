@@ -10,23 +10,23 @@ import kr.ac.kpu.game.s2016182041.cookierun.framework.bitmap.GameBitmap;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.GameObject;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.view.GameView;
 
-public class VerticalScrollBackground implements GameObject {
+public class HorizontalScrollBackground implements GameObject {
     private final Bitmap bitmap;
     private final float speed;
     private float scroll;
 
     private Rect srcRect = new Rect();
     private RectF dstRect = new RectF();
-    public VerticalScrollBackground(int resId, int speed) {
+    public HorizontalScrollBackground(int resId, int speed) {
         this.speed = speed * GameView.MULTIPLIER;
         bitmap = GameBitmap.load(resId);
         int w = bitmap.getWidth();
         int h = bitmap.getHeight();
         srcRect.set(0, 0, w, h);
-        float l = 0;//x - w / 2 * GameView.MULTIPLIER;
-        float t = 0; //y - h / 2 * GameView.MULTIPLIER;
-        float r = GameView.view.getWidth();
-        float b = r * h / w;
+        float l = 0;
+        float t = 0;
+        float b = GameView.view.getHeight();
+        float r = b * w / h;
         dstRect.set(l, t, r, b);
     }
     @Override
@@ -42,15 +42,15 @@ public class VerticalScrollBackground implements GameObject {
         int vh = GameView.view.getHeight();
         int iw = bitmap.getWidth();
         int ih = bitmap.getHeight();
-        int dh = vw * ih / iw;
+        int dw = vh * iw / ih;
 
-        int curr = (int)scroll % dh;
-        if (curr > 0) curr -= dh;
+        int curr = (int)scroll % dw;
+        if (curr > 0) curr -= dw;
 
         while (curr < vh) {
-            dstRect.set(0, curr, vw, curr + dh);
+            dstRect.set(curr, 0, curr + dw, vh);
             canvas.drawBitmap(bitmap, srcRect, dstRect, null);
-            curr += dh;
+            curr += dw;
         }
     }
 }

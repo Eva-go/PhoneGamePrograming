@@ -5,7 +5,6 @@ import android.util.Log;
 
 import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.BoxCollidable;
 
-
 public class CollisionHelper {
     private static final String TAG = CollisionHelper.class.getSimpleName();
     private static RectF rect1 = new RectF();

@@ -5,21 +5,22 @@ import android.view.MotionEvent;
 import kr.ac.kpu.game.s2016182041.cookierun.R;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.game.BaseGame;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.GameObject;
-import kr.ac.kpu.game.s2016182041.cookierun.framework.object.VerticalScrollBackground;
+import kr.ac.kpu.game.s2016182041.cookierun.framework.object.HorizontalScrollBackground;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.view.GameView;
 
 public class MainGame extends BaseGame {
+    private boolean initialized;
     private Player player;
     private Score score;
-    private boolean initialized;
 
-    public enum Layer{
-        bg,platform,player,ui,controller, LAYER_COUNT
+    public enum Layer {
+        bg, platform, player, ui, controller, LAYER_COUNT
     }
 
-    public void add(Layer layer, GameObject obj){
-        add(layer.ordinal(),obj);
+    public void add(Layer layer, GameObject obj) {
+        add(layer.ordinal(), obj);
     }
+
     @Override
     public boolean initResources() {
         if (initialized) {
@@ -30,33 +31,39 @@ public class MainGame extends BaseGame {
 
         initLayers(Layer.LAYER_COUNT.ordinal());
 
-        player = new Player(w/2, h - 300);
+        player = new Player(200, h - 300);
         //layers.get(Layer.player.ordinal()).add(player);
-        add(Layer.player,player);
+        add(Layer.player, player);
+//        add(Layer.controller, new EnemyGenerator());
 
-        int margin = (int)(20*GameView.MULTIPLIER);
+        int margin = (int) (20 * GameView.MULTIPLIER);
+        score = new Score(w - margin, margin);
+        score.setScore(0);
+        add(Layer.ui, score);
 
-        VerticalScrollBackground bg = new VerticalScrollBackground(R.mipmap.cookie_run_bg_1,10);
-        add(Layer.bg,bg);
-
-
-        float tx=0,ty=h-500;
-        while(tx < w){
-            Platform platform = new Platform(Platform.Type.T_10x2,tx,ty);
-            add(Layer.platform,new Platform(Platform.Type.T_10x2,tx,ty));
-//            tx += platform.getDstWidth();
+        add(Layer.bg, new HorizontalScrollBackground(R.mipmap.cookie_run_bg_1, -10));
+        add(Layer.bg, new HorizontalScrollBackground(R.mipmap.cookie_run_bg_2, -20));
+        add(Layer.bg, new HorizontalScrollBackground(R.mipmap.cookie_run_bg_3, -30));
+//
+        float tx = 100, ty = h - 500;
+        while (tx < w) {
+            Platform platform = new Platform(Platform.Type.T_10x2, tx, ty);
+            add(Layer.platform, platform);
+            tx += platform.getDstWidth();
+//        VerticalScrollBackground clouds = new VerticalScrollBackground(R.mipmap.clouds, 20);
+//        add(Layer.bg2, clouds);
         }
 
         initialized = true;
         return true;
-    }
 
+    }
 
     @Override
     public void update() {
         super.update();
 
-        // 충돌체크
+        // collision check
     }
 
     @Override
@@ -64,7 +71,15 @@ public class MainGame extends BaseGame {
         int action = event.getAction();
 //        if (action == MotionEvent.ACTION_DOWN) {
         if (action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_MOVE) {
-            player.moveTo(event.getX(), event.getY());
+//            player.moveTo(event.getX(), event.getY());
+            player.jump();
+//            int li = 0;
+//            for (ArrayList<GameObject> objects: layers) {
+//                for (GameObject o : objects) {
+//                    Log.d(TAG, "L:" + li + " " + o);
+//                }
+//                li++;
+//            }
             return true;
         }
         return false;
