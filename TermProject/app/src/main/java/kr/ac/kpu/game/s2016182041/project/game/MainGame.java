@@ -2,7 +2,10 @@ package kr.ac.kpu.game.s2016182041.project.game;
 
 import android.view.MotionEvent;
 
+import java.util.ArrayList;
+
 import kr.ac.kpu.game.s2016182041.project.R;
+import kr.ac.kpu.game.s2016182041.project.framework.bitmap.GameBitmap;
 import kr.ac.kpu.game.s2016182041.project.framework.game.BaseGame;
 import kr.ac.kpu.game.s2016182041.project.framework.iface.GameObject;
 import kr.ac.kpu.game.s2016182041.project.framework.object.HorizontalScrollBackground;
@@ -12,9 +15,9 @@ public class MainGame extends BaseGame{
     private boolean initialized;
     private Player player;
     private Score score;
-
+    public int bgspeed = -30;
     public enum Layer {
-        bg, platform, player, ui, controller, LAYER_COUNT
+        bg, platform,card, player, ui, controller, LAYER_COUNT
     }
 
     public void add(Layer layer, GameObject obj) {
@@ -31,28 +34,26 @@ public class MainGame extends BaseGame{
 
         initLayers(Layer.LAYER_COUNT.ordinal());
 
-        player = new Player(200, h - 300);
+        player = new Player(0, h - 300);
         //layers.get(Layer.player.ordinal()).add(player);
         add(Layer.player, player);
 //        add(Layer.controller, new EnemyGenerator());
-
         int margin = (int) (20 * GameView.MULTIPLIER);
         score = new Score(w - margin, margin);
         score.setScore(0);
         add(Layer.ui, score);
-
-        add(Layer.bg, new HorizontalScrollBackground(R.mipmap.map1, -10));
+        add(Layer.bg, new HorizontalScrollBackground(R.mipmap.map1, bgspeed,0));
 //        add(Layer.bg, new HorizontalScrollBackground(R.mipmap.cookie_run_bg_2, -20));
 //        add(Layer.bg, new HorizontalScrollBackground(R.mipmap.cookie_run_bg_3, -30));
-
-        float tx = 100, ty = h - 500;
-        while (tx < w) {
-            Platform platform = new Platform(Platform.Type.T_10x2, tx, ty);
-            add(Layer.platform, platform);
-            tx += platform.getDstWidth();
-//        VerticalScrollBackground clouds = new VerticalScrollBackground(R.mipmap.clouds, 20);
-//        add(Layer.bg2, clouds);
-        }
+        add(Layer.platform,new HorizontalScrollBackground(R.mipmap.grass2,bgspeed,-1700));
+//        float tx = 0, ty = h - 150;
+//        while (tx < w) {
+//            Platform platform = new Platform(Platform.Type.T_10x2, tx, ty);
+//            add(Layer.platform, platform);
+//            tx += platform.getDstWidth();
+////        VerticalScrollBackground clouds = new VerticalScrollBackground(R.mipmap.clouds, 20);
+////        add(Layer.bg2, clouds);
+//        }
 
         initialized = true;
         return true;
@@ -62,7 +63,9 @@ public class MainGame extends BaseGame{
     @Override
     public void update() {
         super.update();
-
+        if(player.moveTo>=300){
+            bgspeed=0;
+        }
         // collision check
     }
 

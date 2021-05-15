@@ -4,6 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.util.Log;
 
+
 import kr.ac.kpu.game.s2016182041.project.R;
 import kr.ac.kpu.game.s2016182041.project.framework.bitmap.IndexedAnimationGameBitmap;
 import kr.ac.kpu.game.s2016182041.project.framework.game.BaseGame;
@@ -24,11 +25,13 @@ public class Player implements GameObject, BoxCollidable {
     private float tx, ty;
     private float vertSpeed;
     private float speed;
-
-    private enum State {
-        running, jump, doubleJump, slide, hit
+    public int moveTo;
+    public enum State {
+        sleep, attack, skill1, skill2,move, hit,LAYER_COUNT
     }
-    private State state = State.running;
+
+
+    private State state = State.move;
 
     public Player(float x, float y) {
         this.x = x;
@@ -37,12 +40,15 @@ public class Player implements GameObject, BoxCollidable {
         this.tx = x;
         this.ty = 0;
         this.speed = 800;
-        this.charBitmap = new IndexedAnimationGameBitmap(R.mipmap.tengo, 4.5f, 0);
-        this.charBitmap.setIndices(100, 101, 102, 103);
+        this.charBitmap = new IndexedAnimationGameBitmap(R.mipmap.tengo_alls, 4.5f, 0);
+        this.charBitmap.setIndices(4,3,300,311);
+
 //        this.planeBitmap = new GameBitmap(R.mipmap.fighter);
 //        this.fireBitmap = new GameBitmap(R.mipmap.laser_0);
         this.fireTime = 0.0f;
     }
+
+
 
     public void moveTo(float x, float y) {
         this.tx = x;
@@ -50,22 +56,29 @@ public class Player implements GameObject, BoxCollidable {
     }
 
     public void update() {
+        if(state == State.move){
+            moveTo+=10;
+            if(moveTo>=300){
+                state=State.sleep;
+                charBitmap.setIndices(2,3,0,11);
+            }
+        }
         BaseGame game = BaseGame.get();
-        if (state == State.jump) {
+        if (state == State.attack) {
             float y = this.y + vertSpeed * game.frameTime;
 //            charBitmap.move(0, y - this.y);
             vertSpeed += GRAVITY * game.frameTime;
             if (y >= ground_y) {
                 y = ground_y;
-                state = State.running;
-                this.charBitmap.setIndices(100, 101, 102, 103);
+                state = State.sleep;
+                this.charBitmap.setIndices(5,3,200,220);
             }
             this.y = y;
         }
     }
 
     public void draw(Canvas canvas) {
-        charBitmap.draw(canvas, x, y);
+        charBitmap.draw(canvas, moveTo, y);
     }
 
     @Override
@@ -75,12 +88,12 @@ public class Player implements GameObject, BoxCollidable {
 
     public void jump() {
         //if (state != State.running && state != State.jump && state != State.slide) {
-        if (state != State.running) {
+        if (state != State.sleep) {
             Log.d(TAG, "Not in a state that can jump: " + state);
             return;
         }
-        state = State.jump;
-        charBitmap.setIndices(7, 8);
+        state = State.attack;
+        charBitmap.setIndices(4,3, 100,110);
         vertSpeed = -JUMP_POWER;
     }
 }

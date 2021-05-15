@@ -5,6 +5,9 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -25,14 +28,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8855735d-c862-4569-893a-fc869fa63b65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/bitmap/IndexedAnimationGameBitmap.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/bitmap/IndexedAnimationGameBitmap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/object/HorizontalScrollBackground.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/object/HorizontalScrollBackground.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/MainGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/MainGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/card_file/Card_Attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/card_file/Card_Shield.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/card_file/Card_all_attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/player_file/tengo_sleep.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player_file/tengo_sleep.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +49,13 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -60,7 +72,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android-custom-viewE:/school/4years/PhoneGamePrograming/TermProject/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/view/GameView.java_SELECTED" value="GameView" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Programing/dragonflight" />
     <property name="multi-representation-previewE:/school/4years/PhoneGamePrograming/TermProject/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/view/GameView.java_selected" value="Custom views" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
@@ -168,5 +180,57 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="586" y="198" key="#Inspections/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621092902562" />
+    <state x="445" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1621096790157">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="445" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621096790157" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1621096536692">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621096536692" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1621094261371">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621094261371" />
+    <state width="1875" height="280" key="GridCell.Tab.0.bottom" timestamp="1621107919071">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1875" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621107919071" />
+    <state width="1875" height="280" key="GridCell.Tab.0.center" timestamp="1621107919071">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1875" height="280" key="GridCell.Tab.0.center/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621107919071" />
+    <state width="1875" height="280" key="GridCell.Tab.0.left" timestamp="1621107919071">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1875" height="280" key="GridCell.Tab.0.left/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621107919071" />
+    <state width="1875" height="280" key="GridCell.Tab.0.right" timestamp="1621107919071">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1875" height="280" key="GridCell.Tab.0.right/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621107919071" />
+    <state width="1875" height="280" key="GridCell.Tab.1.bottom" timestamp="1621107919071">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1875" height="280" key="GridCell.Tab.1.bottom/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621107919071" />
+    <state width="1875" height="280" key="GridCell.Tab.1.center" timestamp="1621107919071">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1875" height="280" key="GridCell.Tab.1.center/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621107919071" />
+    <state width="1875" height="280" key="GridCell.Tab.1.left" timestamp="1621107919071">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1875" height="280" key="GridCell.Tab.1.left/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621107919071" />
+    <state width="1875" height="280" key="GridCell.Tab.1.right" timestamp="1621107919071">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1875" height="280" key="GridCell.Tab.1.right/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621107919071" />
+    <state x="752" y="265" key="refactoring.ChangeSignatureDialog" timestamp="1621109167052">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="752" y="265" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621109167052" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1621094661230">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621094661230" />
   </component>
 </project>

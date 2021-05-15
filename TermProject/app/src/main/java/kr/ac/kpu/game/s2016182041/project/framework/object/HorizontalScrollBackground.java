@@ -10,19 +10,20 @@ import kr.ac.kpu.game.s2016182041.project.framework.game.BaseGame;
 import kr.ac.kpu.game.s2016182041.project.framework.iface.GameObject;
 import kr.ac.kpu.game.s2016182041.project.framework.view.GameView;
 
+
 public class HorizontalScrollBackground implements GameObject {
     private final Bitmap bitmap;
-    private final float speed;
+    private float speed;
     private float scroll;
 
     private Rect srcRect = new Rect();
     private RectF dstRect = new RectF();
-    public HorizontalScrollBackground(int resId, int speed) {
+    public HorizontalScrollBackground(int resId, int speed,int y) {
         this.speed = speed * GameView.MULTIPLIER;
         bitmap = GameBitmap.load(resId);
         int w = bitmap.getWidth();
         int h = bitmap.getHeight();
-        srcRect.set(0, 0, w, h);
+        srcRect.set(0, y, w, h);
         float l = 0;
         float t = 0;
         float b = GameView.view.getHeight();
@@ -38,6 +39,7 @@ public class HorizontalScrollBackground implements GameObject {
 
     @Override
     public void draw(Canvas canvas) {
+
         int vw = GameView.view.getWidth();
         int vh = GameView.view.getHeight();
         int iw = bitmap.getWidth();
@@ -46,8 +48,7 @@ public class HorizontalScrollBackground implements GameObject {
 
         int curr = (int)scroll % dw;
         if (curr > 0) curr -= dw;
-
-        while (curr < vh) {
+        while (curr < vw) {
             dstRect.set(curr, 0, curr + dw, vh);
             canvas.drawBitmap(bitmap, srcRect, dstRect, null);
             curr += dw;
