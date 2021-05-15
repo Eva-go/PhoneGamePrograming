@@ -8,7 +8,7 @@ import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.GameObject;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.object.HorizontalScrollBackground;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.view.GameView;
 
-public class MainGame extends BaseGame {
+public class MainGame extends BaseGame{
     private boolean initialized;
     private Player player;
     private Score score;
