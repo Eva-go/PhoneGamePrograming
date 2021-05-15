@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
+import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.GameObject;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.view.GameView;
 
 

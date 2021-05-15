@@ -1,13 +1,13 @@
-package kr.ac.kpu.game.s2016182041.cookierun.framework;
+package kr.ac.kpu.game.s2016182041.cookierun.framework.game;
 
 import android.graphics.Canvas;
-import android.util.Log;
 import android.view.MotionEvent;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import kr.ac.kpu.game.s2016182041.cookierun.framework.utils.CollisionHelper;
+import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.GameObject;
+import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.Recyclable;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.view.GameView;
 import kr.ac.kpu.game.s2016182041.cookierun.game.Player;
 import kr.ac.kpu.game.s2016182041.cookierun.game.Score;

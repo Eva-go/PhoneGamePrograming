@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
+import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.GameObject;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.view.GameView;
 
 
@@ -47,7 +48,7 @@ public class VerticalScrollBackground implements GameObject {
         if(curr > 0) curr -= dh;
 
         while (curr < vh){
-            dstRect.set(0,curr,vw,curr + dh); //l,t,r,b
+            dstRect.set(curr,0,curr+dh,vw); //l,t,r,b
             canvas.drawBitmap(bitmap,srcRect,dstRect,null);
             curr += dh;
         }
