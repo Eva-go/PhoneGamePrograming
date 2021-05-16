@@ -1,21 +1,27 @@
 package kr.ac.kpu.game.s2016182041.project.game;
 
+import android.graphics.Rect;
 import android.view.MotionEvent;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import kr.ac.kpu.game.s2016182041.project.R;
 import kr.ac.kpu.game.s2016182041.project.framework.bitmap.GameBitmap;
 import kr.ac.kpu.game.s2016182041.project.framework.game.BaseGame;
 import kr.ac.kpu.game.s2016182041.project.framework.iface.GameObject;
 import kr.ac.kpu.game.s2016182041.project.framework.object.HorizontalScrollBackground;
+import kr.ac.kpu.game.s2016182041.project.framework.object.ImageObject;
 import kr.ac.kpu.game.s2016182041.project.framework.view.GameView;
 
 public class MainGame extends BaseGame{
     private boolean initialized;
+    ArrayList<Integer> cardList = new ArrayList<>();
     private Player player;
     private Score score;
     public int bgspeed = -30;
+    public int cardHand;
+    public Rect rect;
     public enum Layer {
         bg, platform,card, player, ui, controller, LAYER_COUNT
     }
@@ -46,6 +52,10 @@ public class MainGame extends BaseGame{
 //        add(Layer.bg, new HorizontalScrollBackground(R.mipmap.cookie_run_bg_2, -20));
 //        add(Layer.bg, new HorizontalScrollBackground(R.mipmap.cookie_run_bg_3, -30));
         add(Layer.platform,new HorizontalScrollBackground(R.mipmap.grass2,bgspeed,-1700));
+        cardList.add(R.mipmap.all_attack);
+        cardList.add(R.mipmap.attack);
+        cardList.add(R.mipmap.shield);
+
 //        float tx = 0, ty = h - 150;
 //        while (tx < w) {
 //            Platform platform = new Platform(Platform.Type.T_10x2, tx, ty);
@@ -59,13 +69,17 @@ public class MainGame extends BaseGame{
         return true;
 
     }
+    public void cardhand(){
+        for(int i=0; i<5; ++i) {
+            Random rnd = new Random();
+            add(Layer.card, new ImageObject(cardList.get(rnd.nextInt(3)),400+(300*i),200));
+        }
+    }
 
     @Override
     public void update() {
         super.update();
-        if(player.moveTo>=300){
-            bgspeed=0;
-        }
+
         // collision check
     }
 
@@ -76,6 +90,7 @@ public class MainGame extends BaseGame{
         if (action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_MOVE) {
 //            player.moveTo(event.getX(), event.getY());
             player.jump();
+            cardhand();
 //            int li = 0;
 //            for (ArrayList<GameObject> objects: layers) {
 //                for (GameObject o : objects) {
