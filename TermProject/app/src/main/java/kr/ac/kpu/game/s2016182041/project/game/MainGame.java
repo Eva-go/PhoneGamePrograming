@@ -19,11 +19,12 @@ public class MainGame extends BaseGame{
     ArrayList<Integer> cardList = new ArrayList<>();
     private Player player;
     private Score score;
+    private Monster monster;
     public int bgspeed = -30;
     public int cardHand;
     public Rect rect;
     public enum Layer {
-        bg, platform,card, player, ui, controller, LAYER_COUNT
+        bg, platform,card,monster, player, ui, controller, LAYER_COUNT
     }
 
     public void add(Layer layer, GameObject obj) {
@@ -41,16 +42,16 @@ public class MainGame extends BaseGame{
         initLayers(Layer.LAYER_COUNT.ordinal());
 
         player = new Player(0, h - 300);
+        monster = new Monster(w,h-200);
         //layers.get(Layer.player.ordinal()).add(player);
         add(Layer.player, player);
+        add(Layer.monster,monster);
 //        add(Layer.controller, new EnemyGenerator());
         int margin = (int) (20 * GameView.MULTIPLIER);
         score = new Score(w - margin, margin);
         score.setScore(0);
         add(Layer.ui, score);
         add(Layer.bg, new HorizontalScrollBackground(R.mipmap.map1, bgspeed,0));
-//        add(Layer.bg, new HorizontalScrollBackground(R.mipmap.cookie_run_bg_2, -20));
-//        add(Layer.bg, new HorizontalScrollBackground(R.mipmap.cookie_run_bg_3, -30));
         add(Layer.platform,new HorizontalScrollBackground(R.mipmap.grass2,bgspeed,-1700));
         cardList.add(R.mipmap.all_attack);
         cardList.add(R.mipmap.attack);
