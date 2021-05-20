@@ -42,7 +42,7 @@ public class MainGame extends BaseGame{
         initLayers(Layer.LAYER_COUNT.ordinal());
 
         player = new Player(0, h - 300);
-        monster = new Monster(w,h-200);
+        monster = new Monster(w,h-200,100);
         //layers.get(Layer.player.ordinal()).add(player);
         add(Layer.player, player);
         add(Layer.monster,monster);
@@ -91,6 +91,7 @@ public class MainGame extends BaseGame{
         if (action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_MOVE) {
 //            player.moveTo(event.getX(), event.getY());
             player.jump();
+            monster.hp-=10;
             cardhand();
 //            int li = 0;
 //            for (ArrayList<GameObject> objects: layers) {

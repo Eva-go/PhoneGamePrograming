@@ -1,6 +1,7 @@
 package kr.ac.kpu.game.s2016182041.project.game;
 
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.Log;
 
@@ -27,7 +28,8 @@ public class Monster implements GameObject, BoxCollidable {
     private float vertSpeed;
     private float speed;
     public int moveTo;
-    public int w;
+    public float hp;
+    private Paint paint =new Paint(Paint.ANTI_ALIAS_FLAG);
     public enum State {
         sleep, attack, move, hit,LAYER_COUNT
     }
@@ -35,7 +37,7 @@ public class Monster implements GameObject, BoxCollidable {
 
     private State state = State.move;
 
-    public Monster(float x, float y) {
+    public Monster(float x, float y,float hp) {
         this.x = x;
         this.y = y;
         this.ground_y = y;
@@ -47,8 +49,10 @@ public class Monster implements GameObject, BoxCollidable {
 //        this.planeBitmap = new GameBitmap(R.mipmap.fighter);
 //        this.fireBitmap = new GameBitmap(R.mipmap.laser_0);
         this.fireTime = 0.0f;
+        this.hp=hp;
         moveTo=GameView.view.getWidth();
-
+        paint.setStrokeWidth(14);
+        paint.setStyle(Paint.Style.STROKE);
     }
 
     public void update() {
@@ -75,6 +79,10 @@ public class Monster implements GameObject, BoxCollidable {
 
     public void draw(Canvas canvas) {
         charBitmap.draw(canvas, moveTo, y);
+        paint.setColor(0xff00ff00);   //color.Green
+        paint.setStrokeWidth(30f);
+        canvas.drawLine(moveTo-100, y-50, (moveTo+hp),  y-50, paint);
+
     }
 
     @Override
