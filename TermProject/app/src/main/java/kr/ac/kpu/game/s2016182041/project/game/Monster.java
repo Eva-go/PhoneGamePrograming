@@ -38,6 +38,8 @@ public class Monster implements GameObject, BoxCollidable {
     private State state = State.move;
 
     public Monster(float x, float y,float hp) {
+        float attack =10;
+        float shield =10;
         this.x = x;
         this.y = y;
         this.ground_y = y;
@@ -75,13 +77,16 @@ public class Monster implements GameObject, BoxCollidable {
             }
             this.y = y;
         }
+        if(hp<=-50){
+            hp=-50;
+        }
     }
 
     public void draw(Canvas canvas) {
         charBitmap.draw(canvas, moveTo, y);
         paint.setColor(0xff00ff00);   //color.Green
         paint.setStrokeWidth(30f);
-        canvas.drawLine(moveTo-100, y-50, (moveTo+hp),  y-50, paint);
+        canvas.drawLine((moveTo-50), y-50, (moveTo+hp),  y-50, paint);
 
     }
 

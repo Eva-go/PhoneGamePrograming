@@ -28,13 +28,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8855735d-c862-4569-893a-fc869fa63b65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Cost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Turn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/bitmap/GameBitmap.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/bitmap/GameBitmap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/object/ImageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/object/ImageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/MainGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/MainGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Monster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +68,7 @@
     <property name="android-custom-viewC:/Users/Jo/AppData/Local/Android/Sdk/sources/android-30/android/widget/ImageButton.java_SELECTED" value="ImageButton" />
     <property name="android-custom-viewE:/school/4years/PhoneGamePrograming/TermProject/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/view/GameView.java_SELECTED" value="GameView" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/spgp_2021-main/spgp_2021-main/Samples/DragonFlight" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/spgp_2021-main/spgp_2021-main/Samples/CookieRun" />
     <property name="multi-representation-previewC:/Users/Jo/AppData/Local/Android/Sdk/sources/android-30/android/widget/ImageButton.java_selected" value="Custom views" />
     <property name="multi-representation-previewE:/school/4years/PhoneGamePrograming/TermProject/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/view/GameView.java_selected" value="Custom views" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
@@ -193,26 +190,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621544626776" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1621548127705">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1621560237323">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621548127705" />
-    <state width="1876" height="280" key="GridCell.Tab.0.bottom" timestamp="1621557117720">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621560237323" />
+    <state width="2003" height="279" key="GridCell.Tab.0.bottom" timestamp="1621562165859">
+      <screen x="-2560" y="-218" width="2048" height="1112" />
     </state>
-    <state width="1876" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621557117720" />
-    <state width="1876" height="280" key="GridCell.Tab.0.center" timestamp="1621557117720">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2003" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040/-2560.-218.2048.1112@-2560.-218.2048.1112" timestamp="1621562165859" />
+    <state width="1876" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621560565343" />
+    <state width="2003" height="279" key="GridCell.Tab.0.center" timestamp="1621562165858">
+      <screen x="-2560" y="-218" width="2048" height="1112" />
     </state>
-    <state width="1876" height="280" key="GridCell.Tab.0.center/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621557117720" />
-    <state width="1876" height="280" key="GridCell.Tab.0.left" timestamp="1621557117720">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2003" height="279" key="GridCell.Tab.0.center/0.0.1920.1040/-2560.-218.2048.1112@-2560.-218.2048.1112" timestamp="1621562165858" />
+    <state width="1876" height="279" key="GridCell.Tab.0.center/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621560565343" />
+    <state width="2003" height="279" key="GridCell.Tab.0.left" timestamp="1621562165858">
+      <screen x="-2560" y="-218" width="2048" height="1112" />
     </state>
-    <state width="1876" height="280" key="GridCell.Tab.0.left/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621557117720" />
-    <state width="1876" height="280" key="GridCell.Tab.0.right" timestamp="1621557117720">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2003" height="279" key="GridCell.Tab.0.left/0.0.1920.1040/-2560.-218.2048.1112@-2560.-218.2048.1112" timestamp="1621562165858" />
+    <state width="1876" height="279" key="GridCell.Tab.0.left/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621560565343" />
+    <state width="2003" height="279" key="GridCell.Tab.0.right" timestamp="1621562165858">
+      <screen x="-2560" y="-218" width="2048" height="1112" />
     </state>
-    <state width="1876" height="280" key="GridCell.Tab.0.right/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621557117720" />
+    <state width="2003" height="279" key="GridCell.Tab.0.right/0.0.1920.1040/-2560.-218.2048.1112@-2560.-218.2048.1112" timestamp="1621562165858" />
+    <state width="1876" height="279" key="GridCell.Tab.0.right/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621560565343" />
     <state width="1875" height="280" key="GridCell.Tab.1.bottom" timestamp="1621160639550">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -233,13 +234,21 @@
       <screen x="-2560" y="-218" width="2048" height="1112" />
     </state>
     <state x="-1688" y="-218" width="877" height="1025" maximized="true" key="dock-window-1/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621553652502" />
+    <state x="183" y="142" width="1656" height="716" key="dock-window-2" timestamp="1621560279866">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="183" y="142" width="1656" height="716" key="dock-window-2/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621560279866" />
+    <state x="19" y="25" width="1936" height="1119" key="dock-window-3" timestamp="1621560279866">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="19" y="25" width="1936" height="1119" key="dock-window-3/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621560279866" />
     <state x="752" y="265" key="refactoring.ChangeSignatureDialog" timestamp="1621551616082">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="752" y="265" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621551616082" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1621094661230">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1621559857115">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621094661230" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621559857115" />
   </component>
 </project>

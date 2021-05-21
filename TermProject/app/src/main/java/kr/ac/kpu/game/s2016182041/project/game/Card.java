@@ -47,7 +47,7 @@ public class Card implements GameObject {
         }
     }
     public void card_remove(int card_number){
-        card.set(card_number,new GameBitmap(R.mipmap.cost_image));
+        card.set(card_number,new GameBitmap(R.mipmap.non));
     }
      /*for(int i=0; i<5; ++i) {
         Random rnd = new Random();
@@ -55,15 +55,15 @@ public class Card implements GameObject {
     }*/
     public void card_states(State state){
         if(state == State.shield){
-            //player.state=Player.State.skill1;
+
             Log.d("종류", "state"+state);
         }
         else if(state == State.all_attack){
-            //player.state=Player.State.Skill2;
+
             Log.d("종류", "state"+state);
         }
         else if(state == State.attack){
-            //player.state=Player.State.skill1;
+
             Log.d("종류", "state"+state);
         }
     }

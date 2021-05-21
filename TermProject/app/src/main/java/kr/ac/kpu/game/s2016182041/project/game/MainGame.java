@@ -51,8 +51,8 @@ public class MainGame extends BaseGame{
 
         initLayers(Layer.LAYER_COUNT.ordinal());
 
-        player = new Player(0, h - 300);
-        monster = new Monster(w,h-200,100);
+        player = new Player(0, h - 300,100);
+        monster = new Monster(w,h-200,50);
         card = new Card(300,200,5);
         cost = new Cost(w/35,(h/35)+100,5);
         turn = new Turn(true,w-250,h-800);
@@ -105,11 +105,14 @@ public class MainGame extends BaseGame{
                 for(int i=0; i<3; ++i){
                     if(card.card_list.get(i)==card.card.get(0)){
                         if(i==0)
-                            card.card_states(Card.State.shield);
+                            player.state=Player.State.shield;
                         else if(i==1)
-                            card.card_states(Card.State.all_attack);
-                        else if(i==2)
-                            card.card_states(Card.State.attack);
+                            player.state=Player.State.all_attack;
+                        else if(i==2){
+                            player.state=Player.State.attack;
+                            monster.hp-=player.attack;
+                        }
+
                     }
                 }
                 card.card_remove(0);
@@ -120,11 +123,13 @@ public class MainGame extends BaseGame{
                 for(int i=0; i<3; ++i){
                     if(card.card_list.get(i)==card.card.get(1)){
                         if(i==0)
-                            card.card_states(Card.State.shield);
+                            player.state=Player.State.shield;
                         else if(i==1)
-                            card.card_states(Card.State.all_attack);
-                        else if(i==2)
-                            card.card_states(Card.State.attack);
+                            player.state=Player.State.all_attack;
+                        else if(i==2){
+                            player.state=Player.State.attack;
+                            monster.hp-=player.attack;
+                        }
                     }
                 }
                 card.card_remove(1);
@@ -135,11 +140,13 @@ public class MainGame extends BaseGame{
                 for(int i=0; i<3; ++i){
                     if(card.card_list.get(i)==card.card.get(2)){
                         if(i==0)
-                            card.card_states(Card.State.shield);
+                            player.state=Player.State.shield;
                         else if(i==1)
-                            card.card_states(Card.State.all_attack);
-                        else if(i==2)
-                            card.card_states(Card.State.attack);
+                            player.state=Player.State.all_attack;
+                        else if(i==2){
+                            player.state=Player.State.attack;
+                            monster.hp-=player.attack;
+                        }
                     }
                 }
                 card.card_remove(2);
@@ -150,11 +157,13 @@ public class MainGame extends BaseGame{
                 for(int i=0; i<3; ++i){
                     if(card.card_list.get(i)==card.card.get(3)){
                         if(i==0)
-                            card.card_states(Card.State.shield);
+                            player.state=Player.State.shield;
                         else if(i==1)
-                            card.card_states(Card.State.all_attack);
-                        else if(i==2)
-                            card.card_states(Card.State.attack);
+                            player.state=Player.State.all_attack;
+                        else if(i==2){
+                            player.state=Player.State.attack;
+                            monster.hp-=player.attack;
+                        }
                     }
                 }
                 card.card_remove(3);
@@ -165,11 +174,13 @@ public class MainGame extends BaseGame{
                 for(int i=0; i<3; ++i){
                     if(card.card_list.get(i)==card.card.get(4)){
                         if(i==0)
-                            card.card_states(Card.State.shield);
+                            player.state=Player.State.shield;
                         else if(i==1)
-                            card.card_states(Card.State.all_attack);
-                        else if(i==2)
-                            card.card_states(Card.State.attack);
+                            player.state=Player.State.all_attack;
+                        else if(i==2){
+                            player.state=Player.State.attack;
+                            monster.hp-=player.attack;
+                        }
                     }
                 }
                 card.card_remove(4);
