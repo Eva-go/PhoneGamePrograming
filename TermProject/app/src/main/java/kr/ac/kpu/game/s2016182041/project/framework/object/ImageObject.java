@@ -25,6 +25,8 @@ public class ImageObject implements GameObject {
         float b = y + h / 2 * GameView.MULTIPLIER;
         dstRect.set(l, t, r, b);
     }
+
+
     @Override
     public void update() {
 

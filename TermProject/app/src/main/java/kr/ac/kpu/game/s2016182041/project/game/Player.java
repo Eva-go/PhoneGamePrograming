@@ -27,11 +27,11 @@ public class Player implements GameObject, BoxCollidable {
     private float speed;
     public int moveTo;
     public enum State {
-        sleep, attack, skill1, skill2,move, hit,LAYER_COUNT
+        sleep, attack, skill1,Skill2,move, hit,LAYER_COUNT
     }
 
 
-    private State state = State.move;
+    public State state = State.move;
 
     public Player(float x, float y) {
         this.x = x;
@@ -92,8 +92,8 @@ public class Player implements GameObject, BoxCollidable {
             Log.d(TAG, "Not in a state that can jump: " + state);
             return;
         }
-        state = State.attack;
-        charBitmap.setIndices(4,3, 100,110);
+        if(state==State.skill1)
+            charBitmap.setIndices(4,3, 100,110);
         vertSpeed = -JUMP_POWER;
     }
 }

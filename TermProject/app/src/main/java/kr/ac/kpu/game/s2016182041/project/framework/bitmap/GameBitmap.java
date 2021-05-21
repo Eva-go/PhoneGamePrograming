@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 import kr.ac.kpu.game.s2016182041.project.framework.view.GameView;
 
-public class GameBitmap {
+public class GameBitmap{
     private static HashMap<Integer, Bitmap> bitmaps = new HashMap<Integer, Bitmap>();
 
     public static Bitmap load(int resId) {
@@ -62,4 +62,6 @@ public class GameBitmap {
         rect.set(dl, dt, dr, db);
     }
 
+    public void draw() {
+    }
 }
