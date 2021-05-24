@@ -28,17 +28,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8855735d-c862-4569-893a-fc869fa63b65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/game/Jelly.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/game/StageMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/framework/bitmap/IndexedAnimationGameBitmap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/framework/bitmap/IndexedAnimationGameBitmap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/framework/game/BaseGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/framework/game/BaseGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/framework/object/HorizontalScrollBackground.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/framework/object/HorizontalScrollBackground.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/framework/object/ImageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/framework/object/ImageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/game/MainGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/game/MainGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/game/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/game/Platform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/game/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/assets/stage_01.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/game/StageMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Programing/CookieRun/app/src/main/java/kr/ac/kpu/game/s2016182041/cookierun/game/StageMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
