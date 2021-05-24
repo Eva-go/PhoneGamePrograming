@@ -2,23 +2,29 @@ package kr.ac.kpu.game.s2016182041.cookierun.game;
 
 import android.view.MotionEvent;
 
+import java.util.ArrayList;
+
 import kr.ac.kpu.game.s2016182041.cookierun.R;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.game.BaseGame;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.iface.GameObject;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.object.HorizontalScrollBackground;
 import kr.ac.kpu.game.s2016182041.cookierun.framework.view.GameView;
 
-public class MainGame extends BaseGame{
+public class MainGame extends BaseGame {
     private boolean initialized;
     private Player player;
     private Score score;
 
     public enum Layer {
-        bg, platform, player, ui, controller, LAYER_COUNT
+        bg, platform, item, player, ui, controller, LAYER_COUNT
     }
 
     public void add(Layer layer, GameObject obj) {
         add(layer.ordinal(), obj);
+    }
+
+    public ArrayList<GameObject> objectsAt(Layer layer) {
+        return objectsAt(layer.ordinal());
     }
 
     @Override
@@ -31,7 +37,8 @@ public class MainGame extends BaseGame{
 
         initLayers(Layer.LAYER_COUNT.ordinal());
 
-        player = new Player(200, h - 300);
+        float y = h - Platform.Type.T_2x2.height() - 255;
+        player = new Player(200, y);
         //layers.get(Layer.player.ordinal()).add(player);
         add(Layer.player, player);
 //        add(Layer.controller, new EnemyGenerator());
@@ -45,9 +52,11 @@ public class MainGame extends BaseGame{
         add(Layer.bg, new HorizontalScrollBackground(R.mipmap.cookie_run_bg_2, -20));
         add(Layer.bg, new HorizontalScrollBackground(R.mipmap.cookie_run_bg_3, -30));
 //
-        float tx = 100, ty = h - 500;
+        add(Layer.controller, new StageMap());
+
+        float tx = 0, ty = h - Platform.Type.T_2x2.height();
         while (tx < w) {
-            Platform platform = new Platform(Platform.Type.T_10x2, tx, ty);
+            Platform platform = new Platform(Platform.Type.RANDOM, tx, ty);
             add(Layer.platform, platform);
             tx += platform.getDstWidth();
 //        VerticalScrollBackground clouds = new VerticalScrollBackground(R.mipmap.clouds, 20);
