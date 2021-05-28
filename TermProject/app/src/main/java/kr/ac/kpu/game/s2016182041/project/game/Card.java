@@ -56,15 +56,15 @@ public class Card implements GameObject {
     public void card_states(State state){
         if(state == State.shield){
 
-            Log.d("종류", "state"+state);
+            //Log.d("종류", "state"+state);
         }
         else if(state == State.all_attack){
 
-            Log.d("종류", "state"+state);
+            //Log.d("종류", "state"+state);
         }
         else if(state == State.attack){
 
-            Log.d("종류", "state"+state);
+            //Log.d("종류", "state"+state);
         }
     }
 

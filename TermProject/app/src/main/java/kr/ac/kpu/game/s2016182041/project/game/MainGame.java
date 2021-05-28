@@ -55,12 +55,13 @@ public class MainGame extends BaseGame{
         monster = new Monster(w,h-200,50);
         card = new Card(300,200,5);
         cost = new Cost(w/35,(h/35)+100,5);
-        turn = new Turn(true,w-250,h-800);
+        turn = new Turn(w-250,h-800);
         //layers.get(Layer.player.ordinal()).add(player);
         add(Layer.player, player);
         add(Layer.monster,monster);
         add(Layer.cost,cost);
         add(Layer.card,card);
+        add(Layer.ui,turn);
 //        add(Layer.controller, new EnemyGenerator());
         /*int margin = (int) (20 * GameView.MULTIPLIER);
         score = new Score(w - margin, margin);
@@ -68,7 +69,7 @@ public class MainGame extends BaseGame{
         add(Layer.ui, score);*/
         add(Layer.bg, new HorizontalScrollBackground(R.mipmap.map1, bgspeed,0));
         add(Layer.platform,new HorizontalScrollBackground(R.mipmap.grass2,bgspeed,-1700));
-        add(Layer.ui,new ImageObject(turn.bitmap,w-250,h-800));
+
         card.card_draw();
 //        float tx = 0, ty = h - 150;
 //        while (tx < w) {
@@ -97,7 +98,11 @@ public class MainGame extends BaseGame{
 
 //        if (action == MotionEvent.ACTION_DOWN) {
         if (action == MotionEvent.ACTION_DOWN) {
-            if(event.getX()>1550&&event.getX()<1900&&event.getY()>130&&event.getY()<265){
+            Log.d(TAG, "x: "+event.getY()+"y: "+event.getY());
+            Log.d(TAG,"w: "+turn.bitmap.getWidth()+"h: "+turn.bitmap.getHeight());
+            Log.d(TAG,"xx: "+turn.x+"yy: "+turn.y);
+
+            if(event.getX()<turn.x+turn.bitmap.getWidth()/2&&event.getX()>turn.x-turn.bitmap.getWidth()/2&&event.getY()<turn.y+turn.bitmap.getHeight()/2&&event.getY()>turn.y-turn.bitmap.getHeight()/2){
                 turn_end_button();
             }
             if(event.getX()<card.x+card.card.get(0).getWidth()-50+(270*0)&&event.getX()>card.x-card.card.get(0).getWidth()+50+(270*0)

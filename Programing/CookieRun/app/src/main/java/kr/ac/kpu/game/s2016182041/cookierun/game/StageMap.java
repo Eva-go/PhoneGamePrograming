@@ -71,7 +71,7 @@ public class StageMap implements GameObject {
             Jelly item = new Jelly(ch - '1',x,y);
             game.add(MainGame.Layer.item,item);
         } else if (ch >='0' && ch <= 'Q'){
-            Platform platform = new Platform(Platform.Type.values()[ch- '0'],x,y);
+            Platform platform = new Platform(Platform.Type.values()[ch - '0'],x,y);
             game.add(MainGame.Layer.platform,platform);
         }
     }

@@ -34,7 +34,7 @@ public class GameView extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         //super.onSizeChanged(w, h, oldw, oldh);
-        Log.d(TAG, "onSize: " + w + "," + h);
+        //Log.d(TAG, "onSize: " + w + "," + h);
         BaseGame game = BaseGame.get();
         boolean justInitialized = game.initResources();
         if (justInitialized) {
@@ -51,7 +51,7 @@ public class GameView extends View {
 
     private void requestCallback() {
         if (!running) {
-            Log.d(TAG, "Not running. Not calling Choreographer.postFrameCallback()");
+           //Log.d(TAG, "Not running. Not calling Choreographer.postFrameCallback()");
             return;
         }
         Choreographer.getInstance().postFrameCallback(new Choreographer.FrameCallback() {

@@ -98,7 +98,7 @@ public class Monster implements GameObject, BoxCollidable {
     public void jump() {
         //if (state != State.running && state != State.jump && state != State.slide) {
         if (state != State.sleep) {
-            Log.d(TAG, "Not in a state that can jump: " + state);
+            //Log.d(TAG, "Not in a state that can jump: " + state);
             return;
         }
         state = State.attack;
