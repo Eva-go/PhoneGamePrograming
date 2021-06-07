@@ -109,7 +109,9 @@ public class MainGame extends BaseGame{
                         else if(i==1){
                             player.state=Player.State.all_attack;
                             for(int k =0; k<3; ++k){
-                                monsters.get(k).hp-=player.attack;
+                                if(monsters.get(k).state!=Monster.State.die) {
+                                    monsters.get(k).hp -= player.attack;
+                                }
                             }
                         }
 
