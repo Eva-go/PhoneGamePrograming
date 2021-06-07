@@ -51,9 +51,9 @@ public class MainGame extends BaseGame{
 
         initLayers(Layer.LAYER_COUNT.ordinal());
 
-        monsters.add(0,new Monster(w,h-200,50,w-100));
-        monsters.add(1,new Monster(w,h-200,50,w-200));
-        monsters.add(2,new Monster(w,h-200,50,w-300));
+        monsters.add(0,new Monster(w,h-200,50,w-600));
+        monsters.add(1,new Monster(w,h-200,50,w-400));
+        monsters.add(2,new Monster(w,h-200,50,w-200));
         player = new Player(0, h - 300,100);
         //monster = new Monster(w,h-200,50);
         card = new Card(300,200,5);
@@ -93,9 +93,9 @@ public class MainGame extends BaseGame{
 
 //        if (action == MotionEvent.ACTION_DOWN) {
         if (action == MotionEvent.ACTION_DOWN) {
-            Log.d(TAG, "x: "+event.getY()+"y: "+event.getY());
+           /* Log.d(TAG, "x: "+event.getY()+"y: "+event.getY());
             Log.d(TAG,"w: "+turn.bitmap.getWidth()+"h: "+turn.bitmap.getHeight());
-            Log.d(TAG,"xx: "+turn.x+"yy: "+turn.y);
+            Log.d(TAG,"xx: "+turn.x+"yy: "+turn.y);*/
 
             if(event.getX()<turn.x+turn.bitmap.getWidth()/2&&event.getX()>turn.x-turn.bitmap.getWidth()/2&&event.getY()<turn.y+turn.bitmap.getHeight()/2&&event.getY()>turn.y-turn.bitmap.getHeight()/2){
                 turn_end_button();
@@ -106,15 +106,26 @@ public class MainGame extends BaseGame{
                     if(card.card_list.get(i)==card.card.get(0)){
                         if(i==0)
                             player.state=Player.State.shield;
-                        else if(i==1)
+                        else if(i==1){
                             player.state=Player.State.all_attack;
+                            for(int k =0; k<3; ++k){
+                                monsters.get(k).hp-=player.attack;
+                            }
+                        }
+
                         else if(i==2){
                             player.state=Player.State.attack;
                             //monster.hp-=player.attack;
                             if(monsters.get(0).state!= Monster.State.die) {
                                 monsters.get(0).hp -= player.attack;
                             }
-                            
+                            else if(monsters.get(0).state==Monster.State.die&&monsters.get(1).state!=Monster.State.die){
+                                monsters.get(1).hp -= player.attack;
+                            }
+                            else if(monsters.get(0).state==Monster.State.die&&monsters.get(1).state==Monster.State.die &&monsters.get(2).state!=Monster.State.die){
+                                monsters.get(2).hp -= player.attack;
+                            }
+                            Log.d(TAG,"m1: "+monsters.get(0).hp+"m2: "+monsters.get(1).hp+"m3: "+monsters.get(2).hp);
                         }
 
                     }
