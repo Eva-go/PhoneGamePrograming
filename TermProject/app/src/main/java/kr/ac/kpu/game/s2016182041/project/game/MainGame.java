@@ -26,7 +26,7 @@ public class MainGame extends BaseGame{
     public int bgspeed = -30;
     public Rect rect;
     public int test =100;
-
+    ArrayList<Monster> monsters =new ArrayList<Monster>();
     private static final String TAG = "MyTag";
     public enum Layer {
         bg, platform,card,cost,monster, player, ui,hp, LAYER_COUNT
@@ -51,14 +51,18 @@ public class MainGame extends BaseGame{
 
         initLayers(Layer.LAYER_COUNT.ordinal());
 
+        monsters.add(0,new Monster(w,h-200,50,w-100));
+        monsters.add(1,new Monster(w,h-200,50,w-200));
+        monsters.add(2,new Monster(w,h-200,50,w-300));
         player = new Player(0, h - 300,100);
-        monster = new Monster(w,h-200,50);
+        //monster = new Monster(w,h-200,50);
         card = new Card(300,200,5);
         cost = new Cost(w/35,(h/35)+100,5);
         turn = new Turn(w-250,h-800);
-        //layers.get(Layer.player.ordinal()).add(player);
         add(Layer.player, player);
-        add(Layer.monster,monster);
+        add(Layer.monster,monsters.get(0));
+        add(Layer.monster,monsters.get(1));
+        add(Layer.monster,monsters.get(2));
         add(Layer.cost,cost);
         add(Layer.card,card);
         add(Layer.ui,turn);
@@ -69,16 +73,7 @@ public class MainGame extends BaseGame{
         add(Layer.ui, score);*/
         add(Layer.bg, new HorizontalScrollBackground(R.mipmap.map1, bgspeed,0));
         add(Layer.platform,new HorizontalScrollBackground(R.mipmap.grass2,bgspeed,-1700));
-
         card.card_draw();
-//        float tx = 0, ty = h - 150;
-//        while (tx < w) {
-//            Platform platform = new Platform(Platform.Type.T_10x2, tx, ty);
-//            add(Layer.platform, platform);
-//            tx += platform.getDstWidth();
-////        VerticalScrollBackground clouds = new VerticalScrollBackground(R.mipmap.clouds, 20);
-////        add(Layer.bg2, clouds);
-//        }
 
         initialized = true;
         return true;
@@ -115,7 +110,11 @@ public class MainGame extends BaseGame{
                             player.state=Player.State.all_attack;
                         else if(i==2){
                             player.state=Player.State.attack;
-                            monster.hp-=player.attack;
+                            //monster.hp-=player.attack;
+                            if(monsters.get(0).state!= Monster.State.die) {
+                                monsters.get(0).hp -= player.attack;
+                            }
+                            
                         }
 
                     }

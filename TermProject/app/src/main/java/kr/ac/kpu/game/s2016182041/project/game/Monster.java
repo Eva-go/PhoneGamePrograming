@@ -29,19 +29,22 @@ public class Monster implements GameObject, BoxCollidable {
     private float speed;
     public int moveTo;
     public float hp;
+    public float monster_count;
+    public float move;
     private Paint paint =new Paint(Paint.ANTI_ALIAS_FLAG);
     public enum State {
-        sleep, attack, move, hit,LAYER_COUNT
+        sleep, attack, move, hit,die,LAYER_COUNT
     }
 
 
-    private State state = State.move;
+    public State state = State.move;
 
-    public Monster(float x, float y,float hp) {
+    public Monster(float x, float y,float hp,float move) {
         float attack =10;
         float shield =10;
         this.x = x;
         this.y = y;
+        this.move =move;
         this.ground_y = y;
         this.tx = x;
         this.ty = 0;
@@ -60,7 +63,7 @@ public class Monster implements GameObject, BoxCollidable {
     public void update() {
         if(state == State.move){
             moveTo-=10;
-            if(moveTo<1500){
+            if(moveTo<move){
                 state=State.sleep;
                 charBitmap.setIndices(2,2,0,6);
             }
@@ -79,6 +82,7 @@ public class Monster implements GameObject, BoxCollidable {
         }
         if(hp<=-50){
             hp=-50;
+            state = State.die;
         }
     }
 
