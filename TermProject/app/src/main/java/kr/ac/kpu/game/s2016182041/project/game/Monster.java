@@ -31,6 +31,8 @@ public class Monster implements GameObject, BoxCollidable {
     public float hp;
     public float monster_count;
     public float move;
+    public float die_hp;
+    public float frame_time;
     private Paint paint =new Paint(Paint.ANTI_ALIAS_FLAG);
     public enum State {
         sleep, attack, move, hit,die,LAYER_COUNT
@@ -80,10 +82,7 @@ public class Monster implements GameObject, BoxCollidable {
             }
             this.y = y;
         }
-        if(hp<=-50){
-            hp=-50;
-            state = State.die;
-        }
+        die(hp);
     }
 
     public void draw(Canvas canvas) {
@@ -93,6 +92,21 @@ public class Monster implements GameObject, BoxCollidable {
         canvas.drawLine((moveTo-50), y-50, (moveTo+hp),  y-50, paint);
 
     }
+
+    public void die(float get_hp){
+        die_hp=get_hp;
+        frame_time+=GameView.MULTIPLIER;
+        if(die_hp<=-50){
+            hp=-50;
+            state = State.die;
+            charBitmap.setIndices(2,2,300,330);
+            if(frame_time>=265)
+                charBitmap.setIndices(2,4,300,330);
+
+        }
+        fireTime=0;
+    }
+
 
     @Override
     public void getBoundingRect(RectF rect) {

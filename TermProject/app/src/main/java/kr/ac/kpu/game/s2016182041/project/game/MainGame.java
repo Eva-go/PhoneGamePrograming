@@ -51,9 +51,9 @@ public class MainGame extends BaseGame{
 
         initLayers(Layer.LAYER_COUNT.ordinal());
 
-        monsters.add(0,new Monster(w,h-200,50,w-600));
-        monsters.add(1,new Monster(w,h-200,50,w-400));
-        monsters.add(2,new Monster(w,h-200,50,w-200));
+        monsters.add(0,new Monster(w,h-200,100,w-600));
+        monsters.add(1,new Monster(w,h-200,100,w-400));
+        monsters.add(2,new Monster(w,h-200,100,w-200));
         player = new Player(0, h - 300,100);
         //monster = new Monster(w,h-200,50);
         card = new Card(300,200,5);
