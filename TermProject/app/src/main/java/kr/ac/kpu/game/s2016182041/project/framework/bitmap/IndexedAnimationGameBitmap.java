@@ -15,8 +15,10 @@ public class    IndexedAnimationGameBitmap extends AnimationGameBitmap {
 
     public int FrameX;
     public int FrameY;
+    public int FrameCount;
     public IndexedAnimationGameBitmap(int resId, float framesPerSecond, int frameCount) {
-        super(resId, framesPerSecond, frameCount);
+        super(resId, framesPerSecond,frameCount);
+        FrameCount=frameCount;
     }
 
     protected ArrayList<Rect> srcRects;

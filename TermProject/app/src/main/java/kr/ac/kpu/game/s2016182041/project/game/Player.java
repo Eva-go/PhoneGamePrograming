@@ -13,6 +13,7 @@ import kr.ac.kpu.game.s2016182041.project.framework.bitmap.IndexedAnimationGameB
 import kr.ac.kpu.game.s2016182041.project.framework.game.BaseGame;
 import kr.ac.kpu.game.s2016182041.project.framework.iface.BoxCollidable;
 import kr.ac.kpu.game.s2016182041.project.framework.iface.GameObject;
+import kr.ac.kpu.game.s2016182041.project.framework.view.GameView;
 
 public class Player implements GameObject, BoxCollidable {
     private static final String TAG = Player.class.getSimpleName();
@@ -23,11 +24,12 @@ public class Player implements GameObject, BoxCollidable {
     private static final float JUMP_POWER = 1200;
     private final IndexedAnimationGameBitmap charBitmap;
     private final float ground_y;
-    private float fireTime;
+    private float frame_time;
     private float x, y;
     private float tx, ty;
     private float vertSpeed;
     private float speed;
+    public  GameView gameView;
     public int moveTo;
     public float hp;
     public float attack;
@@ -54,7 +56,7 @@ public class Player implements GameObject, BoxCollidable {
         this.hp = hp;
 //        this.planeBitmap = new GameBitmap(R.mipmap.fighter);
 //        this.fireBitmap = new GameBitmap(R.mipmap.laser_0);
-        this.fireTime = 0.0f;
+        this.frame_time = 0.0f;
     }
 
 
@@ -77,8 +79,15 @@ public class Player implements GameObject, BoxCollidable {
         }
 
         else if(state==State.attack){
-                charBitmap.setIndices(4,3,100,110);
+            frame_time+=GameView.MULTIPLIER;
+            charBitmap.setIndices(4,3,100,110);
+            Log.d(TAG,"time: "+frame_time);
+            if(frame_time>=40){
+                state=State.sleep;
+                frame_time=0;
+            }
         }
+
     }
 
     public void draw(Canvas canvas) {
