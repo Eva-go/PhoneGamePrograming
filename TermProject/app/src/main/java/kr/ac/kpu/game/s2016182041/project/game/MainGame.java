@@ -49,7 +49,7 @@ public class MainGame extends BaseGame{
         }
         int w = GameView.view.getWidth();
         int h = GameView.view.getHeight();
-        get_cost =3;
+        get_cost =5;
         monster_count=3;
         initLayers(Layer.LAYER_COUNT.ordinal());
 
@@ -93,7 +93,7 @@ public class MainGame extends BaseGame{
     public boolean onTouchEvent(MotionEvent event) {
         int action = event.getAction();
         if (action == MotionEvent.ACTION_DOWN) {
-            if(event.getX()<turn.x+turn.bitmap.getWidth()/2&&event.getX()>turn.x-turn.bitmap.getWidth()/2&&event.getY()<turn.y+turn.bitmap.getHeight()/2&&event.getY()>turn.y-turn.bitmap.getHeight()/2){
+            if(event.getX()<turn.x+turn.bitmap.getWidth()-50/2&&event.getX()>turn.x-turn.bitmap.getWidth()+50/2&&event.getY()<turn.y+turn.bitmap.getHeight()-50/2&&event.getY()>turn.y-turn.bitmap.getHeight()+50/2){
                 turn_end_button();
             }
             if(cost.cost_count >=1){
@@ -263,7 +263,22 @@ public class MainGame extends BaseGame{
     public void turn_end_button(){
         for(int i=0; i<monster_count;++i){
             monsters.get(i).state=Monster.State.attack;
+            if(player.shield>0){
+                Log.d(TAG,"shield: "+player.shield);
+                player.shield -= monsters.get(i).attack;
+                Log.d(TAG,"shield2: "+player.shield);
+                if(player.shield<=0){
+                    player.hp -= player.shield;
+                    Log.d(TAG,"hp: "+player.hp);
+                }
+                player.shield=0;
+            }
+            else if(player.shield<=0){
+                player.hp -= monsters.get(i).attack;
+                Log.d(TAG,"hp: "+player.hp);
+            }
         }
+
         turn.turn_end=true;
         cost.cost_count= get_cost;
         card.card_redraw();

@@ -68,8 +68,6 @@ public class Player implements GameObject, BoxCollidable {
     }
 
     public void update() {
-        BaseGame game = BaseGame.get();
-        Log.d(TAG,"frame_time: "+frame_time);
         if(state == State.move){
             moveTo+=10;
             if(moveTo>=300){
@@ -81,6 +79,7 @@ public class Player implements GameObject, BoxCollidable {
             charBitmap.setIndices(2,3,0,11);
         }
         else if(state == State.all_attack){
+            frame_time+=GameView.MULTIPLIER;
             charBitmap.setIndices(5,3,200,220);
             if(frame_time>=80)
             {
@@ -108,7 +107,9 @@ public class Player implements GameObject, BoxCollidable {
         paint_shield.setColor(0xffffffff);   //color.White
         paint_shield.setStrokeWidth(30f);
         //hp = 200
-        canvas.drawLine(moveTo-100, y-100, (moveTo-100+hp),  y-100, paint_hp);
+        if(hp>=0){
+            canvas.drawLine(moveTo-100, y-100, (moveTo-100+hp),  y-100, paint_hp);
+        }
         canvas.drawLine(moveTo-100, y-130, (moveTo-100+shield),  y-130, paint_shield);
     }
 

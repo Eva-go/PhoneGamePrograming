@@ -21,15 +21,10 @@ public class Monster implements GameObject, BoxCollidable {
     private static final float GRAVITY = 2500;
     private static final float JUMP_POWER = 1200;
     private final IndexedAnimationGameBitmap charBitmap;
-    private final float ground_y;
-    private float fireTime;
     private float x, y;
-    private float tx, ty;
-    private float vertSpeed;
-    private float speed;
     public int moveTo;
     public float hp;
-    public float monster_count;
+    public float attack;
     public float move;
     public float set_hp;
     public float frame_time;
@@ -42,20 +37,14 @@ public class Monster implements GameObject, BoxCollidable {
     public State state = State.move;
 
     public Monster(float x, float y,float hp,float move) {
-        float attack =10;
-        float shield =10;
+        this.attack = 10;
         this.x = x;
         this.y = y;
         this.move =move;
-        this.ground_y = y;
-        this.tx = x;
-        this.ty = 0;
-        this.speed = 800;
         this.charBitmap = new IndexedAnimationGameBitmap(R.mipmap.monster, 4.5f, 0);
         this.charBitmap.setIndices(2,2,0,6);
 //        this.planeBitmap = new GameBitmap(R.mipmap.fighter);
 //        this.fireBitmap = new GameBitmap(R.mipmap.laser_0);
-        this.fireTime = 0.0f;
         this.hp=hp;
         moveTo=GameView.view.getWidth();
         paint.setStrokeWidth(14);
@@ -70,11 +59,16 @@ public class Monster implements GameObject, BoxCollidable {
                 charBitmap.setIndices(2,2,0,6);
             }
         }
-        BaseGame game = BaseGame.get();
-        if (state == State.attack) {
-            //vertSpeed * game.frameTime;
-            frame_time= vertSpeed* game.frameTime;
+        else if(state == Monster.State.sleep){
+            charBitmap.setIndices(2,2,0,6);
+        }
+        else if (state == State.attack) {
+            frame_time+=GameView.MULTIPLIER;
             charBitmap.setIndices(2,2,100,119);
+            if(frame_time>=120){
+                state=State.sleep;
+                frame_time=0;
+            }
         }
         hit(hp);
     }
@@ -83,8 +77,9 @@ public class Monster implements GameObject, BoxCollidable {
         charBitmap.draw(canvas, moveTo, y);
         paint.setColor(0xff00ff00);   //color.Green
         paint.setStrokeWidth(30f);
-        canvas.drawLine((moveTo-100), y-50, (moveTo-50+hp),  y-50, paint);
-
+        if (hp >= 0) {
+            canvas.drawLine((moveTo - 100), y - 50, (moveTo - 50 + hp), y - 50, paint);
+        }
     }
 
     public void hit(float get_hp){
@@ -117,6 +112,5 @@ public class Monster implements GameObject, BoxCollidable {
         }
         state = State.attack;
         charBitmap.setIndices(2,2, 0,6);
-        vertSpeed = -JUMP_POWER;
     }
 }
