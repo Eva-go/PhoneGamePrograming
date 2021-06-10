@@ -36,6 +36,9 @@ slay the spire 와 비슷한 게임입니다.
 
 ## 실제 진행
 깃 커밋 수 110회
+
+실재로 진행했을 때 중간고사, 과제등으로 인하여 중간 중간 빠진 날짜가 있었습니다.
+
 ![image](https://user-images.githubusercontent.com/55368765/121574917-b60ee500-ca61-11eb-8674-13b547cef3d8.png)
 
 ## 목표 변경
