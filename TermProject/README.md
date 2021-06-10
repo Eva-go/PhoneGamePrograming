@@ -163,7 +163,7 @@ Monster- 몬스터를 보여주고 행동합니다.
 Turn - 플레이어가 턴을 넘기면 Cost와 Card를 초기화 합니다.
 
 
-발표 영상: https://youtu.be/lapSCck-PzU
+발표 영상: https://www.youtube.com/watch?v=K2AhkpIGm8g&ab_channel=%EB%8F%84%EC%B9%98
 
 게임 컨셉
 High Concept: RPG와 카드 덱 빌딩을 한번에
