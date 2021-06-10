@@ -19,6 +19,7 @@ public class GameView extends View {
     public static float MULTIPLIER = 2;
     private boolean running;
     //    private Ball b1, b2;
+    public static GameView self;
 
     private long lastFrame;
     public static GameView view;

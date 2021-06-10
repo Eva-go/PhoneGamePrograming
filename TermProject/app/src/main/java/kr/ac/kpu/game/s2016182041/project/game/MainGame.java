@@ -1,6 +1,10 @@
 package kr.ac.kpu.game.s2016182041.project.game;
 
 import android.graphics.Rect;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
+import android.os.Build;
 import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -19,7 +23,6 @@ public class MainGame extends BaseGame{
     ArrayList<Integer> cardList = new ArrayList<>();
     public ImageObject map;
     private Player player;
-    private Score score;
     private Cost cost;
     private Turn turn;
     private Card card;
@@ -27,7 +30,7 @@ public class MainGame extends BaseGame{
     private Monster monster;
     public int bgspeed = -30;
     public Rect rect;
-    public float shields = 10;
+    public float shields = 20;
     public int test =100;
     public int get_cost=3;
     public int monster_count=3;
@@ -41,6 +44,10 @@ public class MainGame extends BaseGame{
     public ImageObject in_game_clear;
     public boolean map_set=false;
 
+    private MediaPlayer mainBgmMediaPlayer;
+    private MediaPlayer attackBgmMediaPlayer;
+    private MediaPlayer lastPlayingMediaPlayer;
+
     ArrayList<Monster> monsters =new ArrayList<Monster>();
     private static final String TAG = "MyTag";
     public enum Layer {
@@ -51,13 +58,13 @@ public class MainGame extends BaseGame{
         add(layer.ordinal(), obj);
     }
 
-
-
     @Override
     public boolean initResources() {
+
         if (initialized) {
             return false;
         }
+
         re_game_butten = new ImageObject(R.mipmap.re_game,1000,500);
         map = new ImageObject(R.mipmap.map1,1000,100);
         selection_map =new ImageObject(R.mipmap.selection,1000,500);
@@ -132,6 +139,7 @@ public class MainGame extends BaseGame{
             map = new ImageObject(R.mipmap.map2,1000,100);
             add(Layer.bg,map);
             monster_count+=1;
+            regame=true;
             monsters.add(monster_count-1,new Monster(w,h-200,100,w-monster_move*monster_count));
             add(Layer.monster,monsters.get(monster_count-1));
 
@@ -141,9 +149,11 @@ public class MainGame extends BaseGame{
             map = new ImageObject(R.mipmap.map3,1000,100);
             add(Layer.bg,map);
             monster_count+=1;
+            regame=true;
             monsters.add(monster_count-1,new Monster(w,h-200,100,w-monster_move*monster_count));
             add(Layer.monster,monsters.get(monster_count-1));
         }
+        regame=false;
         map_set=false;
         stage_count+=1;
         //player.turn=true;
@@ -352,7 +362,7 @@ public class MainGame extends BaseGame{
              }
             else if(event.getX()> selection.selection_list.get(1).getWidth()-100+(1000*1)&&event.getX()<selection.selection_list.get(1).getWidth()+500+(1000*1)&&
                     event.getY()>selection.selection_list.get(1).getHeight()-500&&event.getY()<selection.selection_list.get(1).getHeight()+500){
-                player.hp += 20;
+                player.hp += 70;
                  remove_selection();
                  stage();
              }

@@ -1,8 +1,12 @@
 package kr.ac.kpu.game.s2016182041.project.game;
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.util.Log;
 
 
@@ -16,6 +20,7 @@ import kr.ac.kpu.game.s2016182041.project.framework.iface.GameObject;
 import kr.ac.kpu.game.s2016182041.project.framework.view.GameView;
 
 public class Player implements GameObject, BoxCollidable {
+    private MediaPlayer mediaPlayer;
     private static final String TAG = Player.class.getSimpleName();
     private static final int BULLET_SPEED = 1500;
     private static final float FIRE_INTERVAL = 1.0f / 7.5f;
@@ -38,15 +43,17 @@ public class Player implements GameObject, BoxCollidable {
     private Paint paint_hp =new Paint(Paint.ANTI_ALIAS_FLAG);
     private Paint paint_shield =new Paint(Paint.ANTI_ALIAS_FLAG);
     public boolean turn;
+    public Sound sound;
+    private int attackBgm = -1;
     public enum State {
         sleep, attack, all_attack,shield,move, hit,LAYER_COUNT
     }
     public State state = State.move;
 
     public Player(float x, float y,float hp,float shield) {
-        this.attack = 100;
+        this.attack = 50;
         this.shield = shield;
-        this.all_attack = 70;
+        this.all_attack = 40;
         this.x = x;
         this.y = y;
         this.ground_y = y;
@@ -60,13 +67,13 @@ public class Player implements GameObject, BoxCollidable {
 //        this.planeBitmap = new GameBitmap(R.mipmap.fighter);
 //        this.fireBitmap = new GameBitmap(R.mipmap.laser_0);
         this.frame_time = 0.0f;
+        sound=new Sound();
     }
 
 
 
     public void moveTo(float x, float y) {
-        this.tx = x;
-        //this.ty = this.y;
+        sound.play(R.raw.hadouken);
     }
 
     public void update() {
@@ -91,6 +98,7 @@ public class Player implements GameObject, BoxCollidable {
         }
 
         else if(state==State.attack){
+            //Sound.play(R.raw.tengo_shield_sound);
             frame_time+=GameView.MULTIPLIER;
             charBitmap.setIndices(4,3,100,110);
 

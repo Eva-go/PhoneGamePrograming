@@ -28,20 +28,93 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8855735d-c862-4569-893a-fc869fa63b65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Selection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Stage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Sound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programing/SampleGame/app/src/main/java/kr/ac/kpu/game/s2016182041/samplegame/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Programing/SampleGame/app/src/main/java/kr/ac/kpu/game/s2016182041/samplegame/game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programing/SampleGame/app/src/main/java/kr/ac/kpu/game/s2016182041/samplegame/ui/activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Programing/SampleGame/app/src/main/java/kr/ac/kpu/game/s2016182041/samplegame/ui/activity/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/utils/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/utils/Sound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/view/GameView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/MainGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/MainGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Monster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../리소스/레벨업 선택창.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Score.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/clear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/die.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/number_24x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/sk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/slime_attck.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/slime_die.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/slime_sleep.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/slime_sleep_hit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/tengo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/tengo_attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/tengo_move.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/tengo_skill.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/tengo_skill2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/tengo_sleep.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/tengo_sleep_hit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/your_turn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/card_file/all_attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/card_file/attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/card_file/shield.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/cost_file/cost_image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/monseter_file/slime_attck.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/monseter_file/slime_die.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/monseter_file/slime_sleep.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/monseter_file/slime_sleep_hit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/music_file/back_ground_music.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/music_file/tengo_attack_sound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/music_file/tengo_shield_sound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/player_file/sk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/player_file/tengo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/player_file/tengo_attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/player_file/tengo_move.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/player_file/tengo_skill.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/player_file/tengo_skill2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/player_file/tengo_sleep.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/player_file/tengo_sleep_hit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/Card_Attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/Card_Shield.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/Card_all-attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/Curser.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/Enemy_turn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/Game clear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/KPU_Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/Maplestory Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/Stage 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/Stage 2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/Stage 3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/Untitled-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/Untitled-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/Your_turn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/card type.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/slime_attack.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/slime_die.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/slime_sleep.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/slime_sleep_hit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/tengo_attack.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/tengo_move.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/tengo_skill.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/tengo_skill1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/tengo_skill2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/tengo_skill_on.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/tengo_sleep.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/tengo_sleep_hit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/wind.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/wind2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/resource_file/you died.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/turn_file/enemy_turn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/turn_file/turn_end.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/turn_file/your_turn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/ui_file/Game_clear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/ui_file/you_died.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R54N6004ENP]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -54,6 +127,12 @@
       </list>
     </option>
   </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="C:\Users\Jo\TremProject.jks" />
+    <option name="KEY_ALIAS" value="key0" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -64,8 +143,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" />
+    <property name="ApkExportedModule" value="Project.app" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_4_API_29" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-06-10T14:15:48.969Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-06-10T16:39:55.815Z" />
+    <property name="ExportApk.ApkPath" value="E:\school\4years\PhoneGamePrograming\TermProject\app" />
+    <property name="ExportApk.BuildVariants" value="release" />
+    <property name="ExportApk.SignV1" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -77,7 +161,7 @@
     <property name="android-custom-viewC:/Users/Jo/AppData/Local/Android/Sdk/sources/android-30/android/widget/LinearLayout.java_SELECTED" value="LinearLayout" />
     <property name="android-custom-viewE:/school/4years/PhoneGamePrograming/TermProject/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/view/GameView.java_SELECTED" value="GameView" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" />
     <property name="multi-representation-previewC:/Users/Jo/AppData/Local/Android/Sdk/sources/android-30/android/view/View.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/Jo/AppData/Local/Android/Sdk/sources/android-30/android/view/ViewGroup.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/Jo/AppData/Local/Android/Sdk/sources/android-30/android/widget/FrameLayout.java_selected" value="Custom views" />
@@ -191,22 +275,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="586" y="198" key="#Inspections/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621092902562" />
-    <state x="552" y="178" width="816" height="730" key="#Intentions" timestamp="1623298468153">
+    <state x="552" y="178" width="816" height="778" key="#Intentions" timestamp="1623339991061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="178" width="816" height="730" key="#Intentions/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623298468153" />
-    <state x="765" y="225" key="#com.intellij.ide.util.MemberChooser" timestamp="1623326070645">
+    <state x="552" y="178" width="816" height="778" key="#Intentions/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623339991061" />
+    <state x="765" y="225" key="#com.intellij.ide.util.MemberChooser" timestamp="1623340800875">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="225" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623326070645" />
+    <state x="765" y="225" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623340800875" />
     <state x="445" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1621096790157">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="445" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621096790157" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1621544626776">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1623343377798">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621544626776" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623343377798" />
     <state x="92" y="92" width="1736" height="856" key="AVDManager" timestamp="1623314626490">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -215,31 +299,31 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="753" y="265" key="AndroidProcessChooserDialog/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623321766293" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1623317067592">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1623343817254">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1771" y="76" key="FileChooserDialogImpl/0.0.1920.1040/-2560.-218.2048.1112@-2560.-218.2048.1112" timestamp="1621907157505" />
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623317067592" />
-    <state width="1874" height="267" key="GridCell.Tab.0.bottom" timestamp="1623336019090">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623343817254" />
+    <state width="1876" height="267" key="GridCell.Tab.0.bottom" timestamp="1623343390763">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="2003" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040/-2560.-218.2048.1112@-2560.-218.2048.1112" timestamp="1621924186743" />
-    <state width="1874" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623336019090" />
-    <state width="1874" height="267" key="GridCell.Tab.0.center" timestamp="1623336019090">
+    <state width="1876" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623343390763" />
+    <state width="1876" height="267" key="GridCell.Tab.0.center" timestamp="1623343390763">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="2003" height="279" key="GridCell.Tab.0.center/0.0.1920.1040/-2560.-218.2048.1112@-2560.-218.2048.1112" timestamp="1621924186743" />
-    <state width="1874" height="267" key="GridCell.Tab.0.center/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623336019090" />
-    <state width="1874" height="267" key="GridCell.Tab.0.left" timestamp="1623336019090">
+    <state width="1876" height="267" key="GridCell.Tab.0.center/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623343390763" />
+    <state width="1876" height="267" key="GridCell.Tab.0.left" timestamp="1623343390763">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="2003" height="279" key="GridCell.Tab.0.left/0.0.1920.1040/-2560.-218.2048.1112@-2560.-218.2048.1112" timestamp="1621924186743" />
-    <state width="1874" height="267" key="GridCell.Tab.0.left/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623336019090" />
-    <state width="1874" height="267" key="GridCell.Tab.0.right" timestamp="1623336019090">
+    <state width="1876" height="267" key="GridCell.Tab.0.left/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623343390763" />
+    <state width="1876" height="267" key="GridCell.Tab.0.right" timestamp="1623343390763">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="2003" height="279" key="GridCell.Tab.0.right/0.0.1920.1040/-2560.-218.2048.1112@-2560.-218.2048.1112" timestamp="1621924186743" />
-    <state width="1874" height="267" key="GridCell.Tab.0.right/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623336019090" />
+    <state width="1876" height="267" key="GridCell.Tab.0.right/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623343390763" />
     <state width="1876" height="279" key="GridCell.Tab.1.bottom" timestamp="1623327437171">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -276,6 +360,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="752" y="265" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621551616082" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1623337532466">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623337532466" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1623326859413">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

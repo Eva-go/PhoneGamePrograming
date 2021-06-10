@@ -1,5 +1,5 @@
 package kr.ac.kpu.game.s2016182041.project.framework.utils;
-
+import kr.ac.kpu.game.s2016182041.project.R;
 import android.content.Context;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
@@ -7,12 +7,11 @@ import android.media.SoundPool;
 import android.util.Log;
 
 import java.util.HashMap;
-
 public class Sound {
     private static final String TAG = Sound.class.getSimpleName();
     private static SoundPool soundPool;
     private static final int[] SOUND_IDS = {
-//            R.raw.hadouken
+          R.raw.hadouken
     };
     private static HashMap<Integer, Integer> soundIdMap = new HashMap<>();
 
@@ -25,7 +24,7 @@ public class Sound {
                     .build();
             Sound.soundPool = new SoundPool.Builder()
                     .setAudioAttributes(audioAttributes)
-                    .setMaxStreams(3)
+                    .setMaxStreams(4)
                     .build();
         } else {
             Sound.soundPool = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);

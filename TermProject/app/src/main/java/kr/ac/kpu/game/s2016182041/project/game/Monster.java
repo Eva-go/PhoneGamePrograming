@@ -39,7 +39,7 @@ public class Monster implements GameObject, BoxCollidable {
     public State state = State.move;
 
     public Monster(float x, float y,float hp,float move) {
-        this.attack = 10;
+        this.attack = 20;
         this.x = x;
         this.y = y;
         this.move =move;
