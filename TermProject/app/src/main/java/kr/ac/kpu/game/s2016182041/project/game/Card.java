@@ -10,11 +10,13 @@ import java.util.Random;
 import kr.ac.kpu.game.s2016182041.project.R;
 import kr.ac.kpu.game.s2016182041.project.framework.bitmap.GameBitmap;
 import kr.ac.kpu.game.s2016182041.project.framework.iface.GameObject;
+import kr.ac.kpu.game.s2016182041.project.framework.view.GameView;
 
 public class Card implements GameObject {
+    private static final String TAG = Player.class.getSimpleName();
     public float x,y;
     public float card_count;
-    private Player player;
+    public float frame_time;
     Random rnd = new Random();
     ArrayList<GameBitmap> card_list = new ArrayList<>();
     ArrayList<GameBitmap> card = new ArrayList<>();
@@ -42,9 +44,11 @@ public class Card implements GameObject {
         }
     }
     public void card_redraw(){
-        for(int i=0;i<card_count;++i){
-            card.set(i,card_list.get(rnd.nextInt(3)));
+            for(int i=0;i<card_count;++i){
+                card.set(i,card_list.get(rnd.nextInt(3)));
+                frame_time=0;
         }
+
     }
     public void card_remove(int card_number){
         card.set(card_number,new GameBitmap(R.mipmap.non));

@@ -10,6 +10,7 @@ import kr.ac.kpu.game.s2016182041.project.R;
 import kr.ac.kpu.game.s2016182041.project.framework.game.BaseGame;
 import kr.ac.kpu.game.s2016182041.project.framework.iface.GameObject;
 import kr.ac.kpu.game.s2016182041.project.framework.object.HorizontalScrollBackground;
+import kr.ac.kpu.game.s2016182041.project.framework.object.ImageObject;
 import kr.ac.kpu.game.s2016182041.project.framework.view.GameView;
 
 public class MainGame extends BaseGame{
@@ -27,13 +28,17 @@ public class MainGame extends BaseGame{
     public int test =100;
     public int get_cost;
     public int monster_count;
+    public int frame_time;
     ArrayList<Monster> monsters =new ArrayList<Monster>();
     private static final String TAG = "MyTag";
     public enum Layer {
-        bg, platform,card,cost,monster, player, ui,hp, LAYER_COUNT
+        bg, platform,card,cost,monster, player, ui,hp,so, LAYER_COUNT
     }
 
     public void add(Layer layer, GameObject obj) {
+        add(layer.ordinal(), obj);
+    }
+    public void set(Layer layer, GameObject obj) {
         add(layer.ordinal(), obj);
     }
     public void remove(GameObject obj){
@@ -49,7 +54,7 @@ public class MainGame extends BaseGame{
         }
         int w = GameView.view.getWidth();
         int h = GameView.view.getHeight();
-        get_cost =5;
+        get_cost =3;
         monster_count=3;
         initLayers(Layer.LAYER_COUNT.ordinal());
 
@@ -73,8 +78,8 @@ public class MainGame extends BaseGame{
         score = new Score(w - margin, margin);
         score.setScore(0);
         add(Layer.ui, score);*/
-        add(Layer.bg, new HorizontalScrollBackground(R.mipmap.map1, bgspeed,0));
-        add(Layer.platform,new HorizontalScrollBackground(R.mipmap.grass2,bgspeed,-1700));
+        add(Layer.bg,new ImageObject(R.mipmap.map1,1000,100));
+        add(Layer.platform,new ImageObject(R.mipmap.grass2,1000,1100));
         card.card_draw();
 
 
@@ -82,7 +87,10 @@ public class MainGame extends BaseGame{
         return true;
 
     }
-
+    public void stage(){
+        add(Layer.bg,new ImageObject(R.mipmap.map2,1000,100));
+        
+    }
     @Override
     public void update() {
         super.update();
@@ -278,11 +286,10 @@ public class MainGame extends BaseGame{
                 Log.d(TAG,"hp: "+player.hp);
             }
         }
-
+        stage();
         turn.turn_end=true;
         cost.cost_count= get_cost;
         card.card_redraw();
-
     }
 
 }

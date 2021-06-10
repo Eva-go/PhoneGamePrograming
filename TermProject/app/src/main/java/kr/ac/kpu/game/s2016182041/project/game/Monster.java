@@ -89,7 +89,7 @@ public class Monster implements GameObject, BoxCollidable {
             hp=-50;
             state = State.die;
             charBitmap.setIndices(2,2,300,330);
-            Log.d(TAG,"frame_time: "+frame_time);
+
             if(frame_time>=80){
                 charBitmap.setIndices(2,4,300,330);
                 frame_time=81;
