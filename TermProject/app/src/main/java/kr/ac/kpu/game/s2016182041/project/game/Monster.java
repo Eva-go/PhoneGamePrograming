@@ -31,7 +31,7 @@ public class Monster implements GameObject, BoxCollidable {
     public float hp;
     public float monster_count;
     public float move;
-    public float die_hp;
+    public float set_hp;
     public float frame_time;
     private Paint paint =new Paint(Paint.ANTI_ALIAS_FLAG);
     public enum State {
@@ -72,39 +72,35 @@ public class Monster implements GameObject, BoxCollidable {
         }
         BaseGame game = BaseGame.get();
         if (state == State.attack) {
-            float y = this.y + vertSpeed * game.frameTime;
-//            charBitmap.move(0, y - this.y);
-            vertSpeed += GRAVITY * game.frameTime;
-            if (y >= ground_y) {
-                y = ground_y;
-                state = State.sleep;
-                this.charBitmap.setIndices(2,4,100,119);
-            }
-            this.y = y;
+            //vertSpeed * game.frameTime;
+            frame_time= vertSpeed* game.frameTime;
+            charBitmap.setIndices(2,2,100,119);
         }
-        die(hp);
+        hit(hp);
     }
 
     public void draw(Canvas canvas) {
         charBitmap.draw(canvas, moveTo, y);
         paint.setColor(0xff00ff00);   //color.Green
         paint.setStrokeWidth(30f);
-        canvas.drawLine((moveTo-50), y-50, (moveTo+hp),  y-50, paint);
+        canvas.drawLine((moveTo-100), y-50, (moveTo-50+hp),  y-50, paint);
 
     }
 
-    public void die(float get_hp){
-        die_hp=get_hp;
-        frame_time+=GameView.MULTIPLIER;
-        if(die_hp<=-50){
+    public void hit(float get_hp){
+        set_hp=get_hp;
+        if(set_hp<=-50){
+            frame_time+=GameView.MULTIPLIER;
             hp=-50;
             state = State.die;
             charBitmap.setIndices(2,2,300,330);
-            if(frame_time>=265)
+            Log.d(TAG,"frame_time: "+frame_time);
+            if(frame_time>=80){
                 charBitmap.setIndices(2,4,300,330);
+                frame_time=81;
+            }
 
         }
-        fireTime=0;
     }
 
 

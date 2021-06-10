@@ -29,21 +29,22 @@ public class Player implements GameObject, BoxCollidable {
     private float tx, ty;
     private float vertSpeed;
     private float speed;
+    public float shield;
     public  GameView gameView;
     public int moveTo;
     public float hp;
     public float attack;
     public float all_attack;
-    public float shield;
-    private Paint paint =new Paint(Paint.ANTI_ALIAS_FLAG);
+    private Paint paint_hp =new Paint(Paint.ANTI_ALIAS_FLAG);
+    private Paint paint_shield =new Paint(Paint.ANTI_ALIAS_FLAG);
     public enum State {
         sleep, attack, all_attack,shield,move, hit,LAYER_COUNT
     }
     public State state = State.move;
 
-    public Player(float x, float y,float hp) {
+    public Player(float x, float y,float hp,float shield) {
         this.attack = 100;
-        this.shield = 20;
+        this.shield = shield;
         this.all_attack = 70;
         this.x = x;
         this.y = y;
@@ -67,6 +68,8 @@ public class Player implements GameObject, BoxCollidable {
     }
 
     public void update() {
+        BaseGame game = BaseGame.get();
+        Log.d(TAG,"frame_time: "+frame_time);
         if(state == State.move){
             moveTo+=10;
             if(moveTo>=300){
@@ -77,11 +80,19 @@ public class Player implements GameObject, BoxCollidable {
         else if(state == State.sleep){
             charBitmap.setIndices(2,3,0,11);
         }
+        else if(state == State.all_attack){
+            charBitmap.setIndices(5,3,200,220);
+            if(frame_time>=80)
+            {
+                state=State.sleep;
+                frame_time=0;
+            }
+        }
 
         else if(state==State.attack){
             frame_time+=GameView.MULTIPLIER;
             charBitmap.setIndices(4,3,100,110);
-            Log.d(TAG,"time: "+frame_time);
+
             if(frame_time>=40){
                 state=State.sleep;
                 frame_time=0;
@@ -92,9 +103,13 @@ public class Player implements GameObject, BoxCollidable {
 
     public void draw(Canvas canvas) {
         charBitmap.draw(canvas, moveTo, y);
-        paint.setColor(0xff00ff00);   //color.Green
-        paint.setStrokeWidth(30f);
-        canvas.drawLine(moveTo-100, y-100, (moveTo+hp),  y-100, paint);
+        paint_hp.setColor(0xff00ff00);   //color.Green
+        paint_hp.setStrokeWidth(30f);
+        paint_shield.setColor(0xffffffff);   //color.White
+        paint_shield.setStrokeWidth(30f);
+        //hp = 200
+        canvas.drawLine(moveTo-100, y-100, (moveTo-100+hp),  y-100, paint_hp);
+        canvas.drawLine(moveTo-100, y-130, (moveTo-100+shield),  y-130, paint_shield);
     }
 
     @Override

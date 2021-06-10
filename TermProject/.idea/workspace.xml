@@ -28,14 +28,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8855735d-c862-4569-893a-fc869fa63b65" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/TouchEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/MainGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/MainGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/kpu/game/s2016182041/project/game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/tengo_alls.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/tengo_alls.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3a_API_29]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R54N6004ENP]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -58,16 +63,16 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3a_API_29" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-06-08T18:22:32.823Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="R54N6004ENP" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-06-10T04:47:19.183Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SelectDeploymentTargetsDialog.selectedDevices" value="Pixel_3a_API_29" />
+    <property name="SelectDeploymentTargetsDialog.selectedDevices" value="Pixel_3a_API_29&#10;Pixel_4_API_29" />
     <property name="android-custom-viewC:/Users/Jo/AppData/Local/Android/Sdk/sources/android-30/android/widget/ImageButton.java_SELECTED" value="ImageButton" />
     <property name="android-custom-viewE:/school/4years/PhoneGamePrograming/TermProject/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/view/GameView.java_SELECTED" value="GameView" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Programing/CookieRun" />
     <property name="multi-representation-previewC:/Users/Jo/AppData/Local/Android/Sdk/sources/android-30/android/widget/ImageButton.java_selected" value="Custom views" />
     <property name="multi-representation-previewE:/school/4years/PhoneGamePrograming/TermProject/app/src/main/java/kr/ac/kpu/game/s2016182041/project/framework/view/GameView.java_selected" value="Custom views" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
@@ -177,6 +182,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="586" y="198" key="#Inspections/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621092902562" />
+    <state x="552" y="178" width="816" height="730" key="#Intentions" timestamp="1623298468153">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" width="816" height="730" key="#Intentions/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623298468153" />
     <state x="765" y="225" key="#com.intellij.ide.util.MemberChooser" timestamp="1621543795494">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -189,35 +198,35 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1621544626776" />
-    <state x="92" y="92" width="1736" height="856" key="AVDManager" timestamp="1623161811616">
+    <state x="92" y="92" width="1736" height="856" key="AVDManager" timestamp="1623300309818">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="AVDManager/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623161811616" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1622165829624">
+    <state x="92" y="92" width="1736" height="856" key="AVDManager/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623300309818" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1623302752095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1771" y="76" key="FileChooserDialogImpl/0.0.1920.1040/-2560.-218.2048.1112@-2560.-218.2048.1112" timestamp="1621907157505" />
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1622165829624" />
-    <state width="1874" height="279" key="GridCell.Tab.0.bottom" timestamp="1623177043952">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623302752095" />
+    <state width="1876" height="265" key="GridCell.Tab.0.bottom" timestamp="1623302984651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="2003" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040/-2560.-218.2048.1112@-2560.-218.2048.1112" timestamp="1621924186743" />
-    <state width="1874" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623177043952" />
-    <state width="1874" height="279" key="GridCell.Tab.0.center" timestamp="1623177043952">
+    <state width="1876" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623302984651" />
+    <state width="1876" height="265" key="GridCell.Tab.0.center" timestamp="1623302984651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="2003" height="279" key="GridCell.Tab.0.center/0.0.1920.1040/-2560.-218.2048.1112@-2560.-218.2048.1112" timestamp="1621924186743" />
-    <state width="1874" height="279" key="GridCell.Tab.0.center/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623177043952" />
-    <state width="1874" height="279" key="GridCell.Tab.0.left" timestamp="1623177043951">
+    <state width="1876" height="265" key="GridCell.Tab.0.center/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623302984651" />
+    <state width="1876" height="265" key="GridCell.Tab.0.left" timestamp="1623302984651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="2003" height="279" key="GridCell.Tab.0.left/0.0.1920.1040/-2560.-218.2048.1112@-2560.-218.2048.1112" timestamp="1621924186743" />
-    <state width="1874" height="279" key="GridCell.Tab.0.left/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623177043951" />
-    <state width="1874" height="279" key="GridCell.Tab.0.right" timestamp="1623177043952">
+    <state width="1876" height="265" key="GridCell.Tab.0.left/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623302984651" />
+    <state width="1876" height="265" key="GridCell.Tab.0.right" timestamp="1623302984651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="2003" height="279" key="GridCell.Tab.0.right/0.0.1920.1040/-2560.-218.2048.1112@-2560.-218.2048.1112" timestamp="1621924186743" />
-    <state width="1874" height="279" key="GridCell.Tab.0.right/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623177043952" />
+    <state width="1876" height="265" key="GridCell.Tab.0.right/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623302984651" />
     <state width="1876" height="280" key="GridCell.Tab.1.bottom" timestamp="1623049187003">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -234,14 +243,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="280" key="GridCell.Tab.1.right/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623049187003" />
-    <state x="662" y="328" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog" timestamp="1623161552887">
+    <state x="662" y="328" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog" timestamp="1623300139044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="328" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623161552887" />
-    <state x="-2250" y="-90" width="1681" height="1023" key="dock-window-1" timestamp="1623163269499">
+    <state x="662" y="328" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623300139044" />
+    <state x="-2239" y="-57" width="1579" height="730" key="dock-window-1" timestamp="1623296945988">
       <screen x="-2560" y="-218" width="2048" height="1112" />
     </state>
-    <state x="-2250" y="-90" width="1681" height="1023" key="dock-window-1/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623163269499" />
+    <state x="-2239" y="-57" width="1579" height="730" key="dock-window-1/0.0.1920.1040/-2560.-218.2048.1112@0.0.1920.1040" timestamp="1623296945988" />
     <state x="183" y="142" width="1656" height="716" key="dock-window-2" timestamp="1621560279866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
