@@ -37,6 +37,7 @@ public class Player implements GameObject, BoxCollidable {
     public float all_attack;
     private Paint paint_hp =new Paint(Paint.ANTI_ALIAS_FLAG);
     private Paint paint_shield =new Paint(Paint.ANTI_ALIAS_FLAG);
+    public boolean turn;
     public enum State {
         sleep, attack, all_attack,shield,move, hit,LAYER_COUNT
     }
@@ -51,6 +52,7 @@ public class Player implements GameObject, BoxCollidable {
         this.ground_y = y;
         this.tx = x;
         this.ty = 0;
+        this.turn = true;
         this.speed = 800;
         this.charBitmap = new IndexedAnimationGameBitmap(R.mipmap.tengo_alls, 4.5f, 0);
         this.charBitmap.setIndices(4,3,300,311);

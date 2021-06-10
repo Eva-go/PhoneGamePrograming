@@ -32,7 +32,9 @@ public class Monster implements GameObject, BoxCollidable {
     public enum State {
         sleep, attack, move, hit,die,LAYER_COUNT
     }
-
+    public void remove(GameObject obj){
+        remove(obj);
+    }
 
     public State state = State.move;
 
